@@ -1,0 +1,683 @@
+BEGIN KZSQDLG
+
+CHAIN IF~Global("kzdiaocha","GLOBAL",11)
+	!Global("kzxiangcai","GLOBAL",10)
+	!Global("kzxiangcai","GLOBAL",11)
+	!Global("kzxiangcai","GLOBAL",12)
+	!Global("kzxiangcai","GLOBAL",13)~ THEN KZSQDLG SQ0
+	@0
+	== KZSQDLG @6
+	== KZPSDLG @1
+	== KZJJDLG @2
+	== KZSQDLG @3
+	END
+	IF ~~ THEN REPLY @4 GOTO SQ1
+	
+CHAIN KZSQDLG SQ1	
+	@7
+	=@8
+	END
+	IF ~~ THEN REPLY @9 EXTERN KZPSDLG SQ2	
+	
+CHAIN KZPSDLG SQ2
+	@11
+	== KZSWDLG @12
+	== KZJJDLG @13
+	== KZSQDLG @14
+	== KZSQDLG @15
+	END
+	IF ~~ THEN REPLY @16 EXTERN KZSQDLG SQ3	
+	
+CHAIN KZSQDLG SQ3	
+	@17
+	== KZSWDLG @19
+	== KZLZDLG @18
+	== KZPSDLG @20
+	== KZSQDLG @21
+	== KZPSDLG @22
+	END
+	IF ~~ THEN REPLY @67 EXTERN KZPSDLG SQ3.1
+	
+CHAIN KZPSDLG SQ3.1	
+	@68
+	== KZSQDLG @23
+	== KZSQDLG @69
+	END
+	IF ~~ THEN REPLY @24 EXTERN KZSQDLG SQ4		
+	
+CHAIN KZSQDLG SQ4	
+	@25
+	== KZSQDLG @26
+	== KZJJDLG @27
+	== KZSWDLG @28
+	== KZLZDLG @29
+	== KZPSDLG @30
+	== KZSQDLG @70
+	END
+	IF ~~ THEN REPLY @71 EXTERN KZSQDLG SQ4.1	
+	
+CHAIN KZSQDLG SQ4.1
+	@72
+	== KZPSDLG @73
+	== KZSQDLG @74
+	== KZSQDLG @5
+	END
+	IF ~~ THEN REPLY @31 EXTERN KZPSDLG SQ5	
+	
+CHAIN KZPSDLG SQ5	
+	@32
+	END
+	IF ~~ THEN 	
+	DO~SetGlobal("kzdiaocha","GLOBAL",12)
+	ActionOverride("kzljcre",MoveToPointNoInterrupt([460.890]))
+	ActionOverride("kzljcre",DestroySelf())
+	ActionOverride("kzjjcre",MoveToPointNoInterrupt([460.890]))
+	ActionOverride("kzjjcre",DestroySelf())
+	ActionOverride("kzlzcre",MoveToPointNoInterrupt([460.890]))
+	ActionOverride("kzlzcre",DestroySelf())
+	ActionOverride("kzpscre",MoveToPointNoInterrupt([460.890]))
+	ActionOverride("kzpscre",DestroySelf())
+	ActionOverride("kzswcre",MoveToPointNoInterrupt([460.890]))
+	ActionOverride("kzswcre",DestroySelf())~
+EXIT	   
+	
+CHAIN IF~Global("kzdiaocha","GLOBAL",12)
+	!Global("kztoubu","GLOBAL",5)
+	!Global("kzxiangcai","GLOBAL",10)
+	!Global("kzxiangcai","GLOBAL",11)
+	!Global("kzxiangcai","GLOBAL",12)
+	!Global("kzxiangcai","GLOBAL",13)~ THEN KZSQDLG SQ6
+	@33
+	END
+	IF ~PartyHasItem("kzdanga")~ THEN REPLY @34 GOTO SQ7
+	IF ~~ THEN REPLY @42 GOTO SQ8
+	IF ~~ THEN REPLY @45 GOTO SQ9	
+	IF ~~ THEN REPLY @48 GOTO SQ10	
+	IF ~~ THEN REPLY @50 GOTO SQ11	
+	IF ~~ THEN REPLY @54 EXIT
+	
+CHAIN IF~Global("kztoubu","GLOBAL",5)
+	!Global("kzdiaocha","GLOBAL",20)
+	!Global("kzxiangcai","GLOBAL",10)
+	!Global("kzxiangcai","GLOBAL",11)
+	!Global("kzxiangcai","GLOBAL",12)
+	!Global("kzxiangcai","GLOBAL",13)~ THEN KZSQDLG SQ12
+	@55
+	END
+	IF ~~ THEN REPLY @42 GOTO SQ8
+	IF ~~ THEN REPLY @45 GOTO SQ9	
+	IF ~~ THEN REPLY @48 GOTO SQ10	
+	IF ~~ THEN REPLY @50 GOTO SQ11	
+	IF ~~ THEN REPLY @54 EXIT	
+	
+CHAIN KZSQDLG SQ7
+	@35
+	=@36
+	END
+	IF ~~ THEN REPLY @37 GOTO SQ7.1
+	
+CHAIN KZSQDLG SQ7.1
+	@38
+	END
+	IF ~~ THEN REPLY @39 GOTO SQ7.2
+	
+CHAIN KZSQDLG SQ7.2
+	@40
+	=@41
+	END	
+	IF ~~ THEN 
+	DO~TakePartyItem("kzdanga")
+	SetGlobal("kztuibu","GLOBAL",2)
+	SetGlobal("kztoubu","GLOBAL",5)~
+EXIT
+
+CHAIN KZSQDLG SQ8
+	@43
+	=@44
+	END	
+	IF ~~ THEN
+EXIT
+	
+CHAIN KZSQDLG SQ9	
+	@46
+	=@47
+	END	
+	IF ~~ THEN	
+EXIT	
+	
+CHAIN KZSQDLG SQ10
+	@49
+	END	
+	IF ~~ THEN	
+EXIT		
+	
+CHAIN KZSQDLG SQ11	
+	@51
+	END	
+	IF ~~ THEN REPLY @52 GOTO SQ11.1
+	
+CHAIN KZSQDLG SQ11.1
+	@53
+	END		
+	IF ~~ THEN	
+EXIT		
+	
+CHAIN IF~Global("kzdiaocha","GLOBAL",20)
+	!Global("kzxiangcai","GLOBAL",10)
+	!Global("kzxiangcai","GLOBAL",11)
+	!Global("kzxiangcai","GLOBAL",12)
+	!Global("kzxiangcai","GLOBAL",13)~ THEN KZSQDLG SQ13	
+	@56
+	END		
+	IF ~~ THEN REPLY @57 GOTO SQ14
+	IF ~~ THEN REPLY @54 EXIT	
+	
+CHAIN KZSQDLG SQ14
+	@58
+	END	
+	IF ~~ THEN REPLY @59 GOTO SQ15	
+	
+CHAIN KZSQDLG SQ15	
+	@60
+	=@61
+	END
+	IF ~~ THEN REPLY @62 GOTO SQ16	
+	
+CHAIN KZSQDLG SQ16
+	@63
+	END
+	IF ~~ THEN REPLY @64 GOTO SQ17	 	
+	
+CHAIN KZSQDLG SQ17
+	@65
+	=@66
+	END	
+	IF ~~ THEN
+EXIT	
+	
+CHAIN IF~OR(2)
+	Global("kzxiangcai","GLOBAL",10)
+	Global("kzxiangcai","GLOBAL",11)~ THEN KZSQDLG SQ18 
+	@75
+	END
+	IF ~~ THEN REPLY @76 GOTO SQ19	
+	IF ~CheckStatGT(Player1,15,DEX)
+	!PartyHasItem("kzjiato")
+	!Global("kzxiangcai","GLOBAL",11)~ THEN REPLY @79 GOTO SQ20	
+	IF ~!CheckStatGT(Player1,15,DEX)
+	!PartyHasItem("kzjiato")
+	!Global("kzxiangcai","GLOBAL",11)~ THEN REPLY @79 GOTO SQ21
+	
+CHAIN KZSQDLG SQ19
+	@77
+	=@78
+	END
+	IF ~~ THEN 
+EXIT	
+	
+CHAIN KZSQDLG SQ20
+	@80
+	END
+	IF ~~ THEN 
+	DO ~GiveItemCreate("kzjiato",Player1,1,0,0)~
+EXIT
+	
+CHAIN KZSQDLG SQ21	
+	@81
+	=@82
+	END
+	IF ~CheckStatGT(Player1,15,STR)~ THEN REPLY @83 GOTO SQ21.1 	
+	IF ~CheckStatGT(Player1,15,INT)~ THEN REPLY @84 GOTO SQ21.2		
+	IF ~CheckStatGT(Player1,15,WIS)~ THEN REPLY @85 GOTO SQ21.3			
+	IF ~CheckStatGT(Player1,15,CHR)~ THEN REPLY @86 GOTO SQ21.4
+	IF ~~ THEN REPLY @280 GOTO SQBC1
+	
+CHAIN KZSQDLG SQBC1
+	@281
+	=@282
+	END
+	IF ~~ THEN 
+EXIT
+	
+CHAIN KZSQDLG SQ21.1
+	@87
+	=@88
+	=@89
+	END
+	IF ~~ THEN REPLY @90 GOTO SQ21.11
+
+CHAIN KZSQDLG SQ21.11
+	@91
+	END
+	IF ~~ THEN
+	DO ~GiveItemCreate("kzjiato",Player1,1,0,0)~
+EXIT	
+	
+CHAIN KZSQDLG SQ21.2	
+	@92
+	=@93
+	=@94
+	END
+	IF ~~ THEN REPLY @95 GOTO SQ21.21	
+	
+CHAIN KZSQDLG SQ21.21	
+	@96
+	END
+	IF ~~ THEN
+	DO ~GiveItemCreate("kzjiato",Player1,1,0,0)~
+EXIT	
+	
+CHAIN KZSQDLG SQ21.3	
+	@97
+	=@98
+	=@99
+	END
+	IF ~~ THEN REPLY @100 GOTO SQ21.31	
+	
+CHAIN KZSQDLG SQ21.31
+	@101
+	END
+	IF ~~ THEN
+	DO ~GiveItemCreate("kzjiato",Player1,1,0,0)~
+EXIT	
+	
+CHAIN KZSQDLG SQ21.4	
+	@102
+	=@103
+	=@104
+	END
+	IF ~~ THEN REPLY @105 GOTO SQ21.41	
+	
+CHAIN KZSQDLG SQ21.41
+	@106
+	END
+	IF ~~ THEN
+	DO ~GiveItemCreate("kzjiato",Player1,1,0,0)~
+EXIT	
+
+
+CHAIN IF~Global("kzxiangcai","GLOBAL",13)~THEN KZSQDLG FLSQ1
+	@107
+	== KZPSDLG @108
+	== KZSQDLG @109
+	== KZSQDLG @110
+	== KZPSDLG @111
+	== KZSQDLG @37
+	== KZPSDLG @113
+	== KZPSDLG @114
+	END
+	IF ~~ THEN REPLY @115 EXTERN KZSQDLG FLSQ2
+	IF ~~ THEN REPLY @116 EXTERN KZSQDLG FLSQ2
+
+CHAIN KZSQDLG FLSQ2
+	@117
+	== KZPSDLG @118
+	== KZSQDLG @119
+	== KZPSDLG @120
+	== KZSQDLG @121
+	END
+	IF ~~ THEN REPLY @122 EXTERN KZSQDLG FLSQ3	
+	IF ~~ THEN REPLY @123 EXTERN KZSQDLG FLSQ3
+	
+CHAIN KZSQDLG FLSQ3
+	@124
+	== KZJJDLG @125
+	== KZSWDLG @126
+	== KZPSDLG @127
+	== KZSQDLG @128
+	== KZPSDLG @129
+	END	
+	IF ~~ THEN REPLY @130 EXTERN KZPSDLG FLSQ4	
+	IF ~~ THEN REPLY @131 EXTERN KZPSDLG FLSQ4		
+	
+CHAIN KZPSDLG FLSQ4	
+	@132
+	== KZCBDLG @133
+	== KZSQDLG @37
+	== KZLZDLG @134
+	== KZSQDLG @112
+	END
+	IF ~~ THEN REPLY @135 EXTERN KZPSDLG FLSQ5	
+	
+CHAIN KZPSDLG FLSQ5	
+	@136
+	== KZJJDLG @137
+	== KZSWDLG @138
+	== KZSQDLG @37
+	== KZSQDLG @139
+	== KZSQDLG @140
+	== KZLJDLG @141
+	== KZSQDLG @142
+	== KZSQDLG @143
+	END
+	IF ~~ THEN REPLY @144 EXTERN KZPSDLG FLSQ6	
+	
+CHAIN KZPSDLG FLSQ6
+	@145
+	== KZPSDLG @146
+	== KZSWDLG @147
+	== KZPSDLG @148
+	== KZSQDLG @37	
+	== KZPSDLG @149
+	== KZPSDLG @150
+	END
+	IF ~~ THEN REPLY @151 EXTERN KZPSDLG FLSQ7
+	
+CHAIN KZPSDLG FLSQ7
+	@152
+	== KZSQDLG @153
+	== KZLZDLG @154
+	== KZJJDLG @155
+	== KZLJDLG @156	
+	== KZSWDLG @157
+	END
+	IF ~~ THEN REPLY @158 DO ~PlaySound("dsost6")~ EXTERN KZLJDLG FLSQ8
+	
+CHAIN KZLJDLG FLSQ8
+	@159
+	== KZLJDLG @160
+	== KZLJDLG @161
+	== KZPSDLG @162
+	== KZLJDLG @163
+	== KZPSDLG @164	
+	== KZSQDLG @165
+	END
+	IF ~~ THEN REPLY @166 EXTERN KZSQDLG FLSQ9
+	
+CHAIN KZSQDLG FLSQ9
+	@167
+	== KZSQDLG @168
+	== KZJJDLG @169
+	== KZSWDLG @170
+	== KZLJDLG @171
+	== KZSQDLG @37
+	END
+	IF ~~ THEN REPLY @172 EXTERN KZLJDLG FLSQ10
+	
+CHAIN KZLJDLG FLSQ10
+	@173
+	== KZLJDLG @174
+	== KZJJDLG @175
+	== KZLJDLG @176
+	== KZPSDLG @177
+	== KZLJDLG @178	
+	== KZLJDLG @179
+	== KZLZDLG @180
+	== KZLJDLG @181
+	== KZLJDLG @182
+	== KZJJDLG @183
+	END
+	IF ~~ THEN REPLY @184 EXTERN KZLJDLG FLSQ11	
+	
+CHAIN KZLJDLG FLSQ11	
+	@185
+	=@186
+	=@187
+	=@188
+	END
+	IF ~~ THEN REPLY @189 EXTERN KZLJDLG FLSQ12	
+	
+CHAIN KZLJDLG FLSQ12
+	@190
+	=@191
+	=@10
+	END
+	IF ~~ THEN 
+	DO ~ClearAllActions()
+	StartCutSceneMode()
+	StartCutScene("KZCUTJ1")~
+EXIT
+
+CHAIN IF~Global("kzxiangcai","GLOBAL",17)~THEN KZSQDLG FLSQ13	
+	@192
+	END
+	IF ~~ THEN REPLY @193 GOTO FLSQ14	
+	
+CHAIN KZSQDLG FLSQ14	
+	@194
+	END
+	IF ~~ THEN REPLY @195 GOTO FLSQ15	
+	
+CHAIN KZSQDLG FLSQ15	
+	@196
+	=@197
+	=@198
+	=@199
+	END
+	IF ~~ THEN REPLY @200 GOTO FLSQ16
+	
+CHAIN KZSQDLG FLSQ16
+	@201
+	=@202
+	END
+	IF ~~ THEN 	
+	DO ~SetGlobal("kzxiangcai","GLOBAL",18)~
+EXIT
+	
+CHAIN IF~Global("kzxiangcai","GLOBAL",18)~THEN KZSQDLG FLSQ17
+	@203
+	END
+	IF ~~ THEN REPLY @204 GOTO FLSQ18
+	IF ~~ THEN REPLY @205 GOTO FLSQ19		
+	IF ~~ THEN REPLY @206 GOTO FLSQ20
+	IF ~~ THEN REPLY @283 GOTO ADSQ1	
+	IF ~~ THEN REPLY @54 EXIT
+	
+CHAIN KZSQDLG FLSQ19	
+	@207
+	END
+	IF ~~ THEN REPLY @208 GOTO FLSQ19.1	
+	
+CHAIN KZSQDLG FLSQ19.1	
+	@209
+	END
+	IF ~~ THEN 	
+EXIT
+
+CHAIN KZSQDLG FLSQ20
+	@210
+	END
+	IF ~~ THEN REPLY @211 GOTO FLSQ20.1	 		
+	
+CHAIN KZSQDLG FLSQ20.1
+	@212
+	END
+	IF ~~ THEN REPLY @213 GOTO FLSQ20.2	 	
+	
+CHAIN KZSQDLG FLSQ20.2	
+	@214
+	END
+	IF ~~ THEN 	
+EXIT	
+	
+CHAIN KZSQDLG FLSQ18
+	@215
+	END
+	IF ~~ THEN REPLY @216 GOTO FLSQ18.1
+	
+CHAIN KZSQDLG FLSQ18.1
+	@217
+	=@218
+	=@219
+	END
+	IF ~~ THEN REPLY @220 GOTO FLSQ18.2	
+	
+CHAIN KZSQDLG FLSQ18.2	
+	@221
+	== KZSQDLG @222
+	== IMOEN2J IF ~InParty("Imoen2") InMyArea("Imoen2") !StateCheck("Imoen2",CD_STATE_NOTVALID)~ THEN @223	
+	== JAHEIRAJ IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN @224	
+	== AERIEJ IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN @225
+	== VICONIJ IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN @226	
+	== MINSCJ IF ~InParty("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID)~ THEN @227
+	== NALIAJ IF ~InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN @228 	
+	== YOSHJ IF ~InParty("Yoshimo") InMyArea("Yoshimo") !StateCheck("Yoshimo",CD_STATE_NOTVALID)~ THEN @229
+	== HAERDAJ IF ~InParty("Haerdalis") InMyArea("Haerdalis") !StateCheck("Haerdalis",CD_STATE_NOTVALID)~ THEN @230
+	== ANOMENJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN @231
+	== KELDORJ IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN @232
+	== KORGANJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN @233
+	== EDWINJ IF ~InParty("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN @234
+	== JANJ IF ~InParty("Jan") InMyArea("Jan") !StateCheck("Jan",CD_STATE_NOTVALID)~ THEN @235
+	== VALYGARJ IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN @236
+	== MAZZYJ IF ~InParty("Mazzy") InMyArea("Mazzy") !StateCheck("Mazzy",CD_STATE_NOTVALID)~ THEN @237
+	== CERNDJ IF ~InParty("Cernd") InMyArea("Cernd") !StateCheck("Cernd",CD_STATE_NOTVALID)~ THEN @238
+	END
+	IF ~~ THEN REPLY @239 GOTO FLSQ18.3
+	IF ~~ THEN REPLY @240 GOTO FLSQ18.4	
+	
+CHAIN KZSQDLG FLSQ18.4	
+	@241
+	END
+	IF ~~ THEN 	
+	DO ~SetGlobal("kzxiangcai","GLOBAL",19)~
+EXIT	
+	
+CHAIN KZSQDLG FLSQ18.3	
+	@242
+	=@243
+	END
+	IF ~~ THEN 	
+	DO ~SetGlobal("kzpingshou","GLOBAL",17)
+	SetGlobal("kzjianjing","GLOBAL",17)
+	SetGlobal("kzlijia","GLOBAL",17)
+	SetGlobal("kzshouwu","GLOBAL",17)	
+	SetGlobal("kzlizuo","GLOBAL",17)		
+	SetGlobal("kzchangbin","GLOBAL",17)	
+	SetGlobal("kzshuangshou","GLOBAL",17)				
+	ClearAllActions()
+	StartCutSceneMode()
+	StartCutScene("KZCUTJ5")~
+EXIT
+	
+CHAIN IF~Global("kzxiangcai","GLOBAL",19)~THEN KZSQDLG FLSQ21	
+	@244
+	END
+	IF ~~ THEN REPLY @239 GOTO FLSQ18.3
+	IF ~~ THEN REPLY @205 GOTO FLSQ19		
+	IF ~~ THEN REPLY @206 GOTO FLSQ20
+	IF ~~ THEN REPLY @283 GOTO ADSQ1
+	IF ~~ THEN REPLY @54 EXIT
+	
+CHAIN IF~Global("kzxiangcai","GLOBAL",20)~THEN KZSQDLG FLSQ22
+	@245
+	=@246
+	END
+	IF ~~ THEN REPLY @247 GOTO FLSQ23	
+	
+CHAIN KZSQDLG FLSQ23
+	@248
+	END
+	IF ~~ THEN REPLY @249 GOTO FLSQ24		
+	
+CHAIN KZSQDLG FLSQ24	
+	@250
+	END
+	IF ~~ THEN REPLY @251 GOTO FLSQ25	
+	
+CHAIN KZSQDLG FLSQ25
+	@252
+	END
+	IF ~~ THEN REPLY @253 GOTO FLSQ26	
+	
+CHAIN KZSQDLG FLSQ26
+	@254
+	END
+	IF ~~ THEN REPLY @255 GOTO FLSQ26.1
+
+CHAIN KZSQDLG FLSQ26.1
+	@268
+	END
+	IF ~~ THEN REPLY @269 GOTO FLSQ27
+
+CHAIN KZSQDLG FLSQ27
+	@256
+	END
+	IF ~~ THEN REPLY @257 GOTO FLSQ28	
+	
+CHAIN KZSQDLG FLSQ28
+	@258
+	END
+	IF ~~ THEN REPLY @259 GOTO FLSQ29		
+	
+CHAIN KZSQDLG FLSQ29	
+	@260
+	END
+	IF ~~ THEN REPLY @261 GOTO FLSQ30	
+	
+CHAIN KZSQDLG FLSQ30		
+	@262
+	END
+	IF ~~ THEN 
+	DO ~EraseJournalEntry(@10028)
+	EraseJournalEntry(@10029)	
+	EraseJournalEntry(@10030)	
+	EraseJournalEntry(@10031)
+	EraseJournalEntry(@10032)		
+	AddJournalEntry(@10033,QUEST_DONE)
+	AddExperienceParty(12000)
+	SetGlobal("kzxiangcai","GLOBAL",21)
+	SetGlobal("kzjianjing","GLOBAL",24)~
+EXIT	
+	
+CHAIN IF~Global("kzxiangcai","GLOBAL",21)~THEN KZSQDLG FLSQ31
+	@263
+	END
+	IF ~~ THEN REPLY @264 GOTO FLSQ32
+	
+CHAIN KZSQDLG FLSQ32
+	@265
+	END
+	IF ~~ THEN REPLY @266 GOTO FLSQ33	
+
+CHAIN KZSQDLG FLSQ33
+	@267
+	END
+	IF ~~ THEN 
+EXIT
+
+CHAIN IF~Global("kzxiangcai","GLOBAL",22)~THEN KZSQDLG FLSQ34
+	@270
+	END
+	IF ~~ THEN REPLY @271 GOTO FLSQ35	
+
+CHAIN KZSQDLG FLSQ35
+	@272
+	END
+	IF ~~ THEN REPLY @273 GOTO FLSQ36	
+	
+CHAIN KZSQDLG FLSQ36
+	@274
+	END
+	IF ~~ THEN
+EXIT	
+	
+CHAIN IF~Global("kzxiangcai","GLOBAL",23)~THEN KZSQDLG FLSQ37	
+	@275
+	END
+	IF ~~ THEN REPLY @276 GOTO FLSQ38
+	
+CHAIN KZSQDLG FLSQ38
+	@277
+	END
+	IF ~~ THEN REPLY @278 GOTO FLSQ39	
+	
+CHAIN KZSQDLG FLSQ39
+	@279
+	END
+	IF ~~ THEN 
+EXIT
+	
+CHAIN KZSQDLG ADSQ1
+	@284
+	END
+	IF ~~ THEN REPLY @285 GOTO ADSQ2
+	
+CHAIN KZSQDLG ADSQ2	
+	@286
+	=@287
+	END
+	IF ~~ THEN 
+EXIT
+	
+	
+	

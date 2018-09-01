@@ -1,0 +1,16 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId(Player1)
+Wait(1)
+PlaySound("dsost7")
+Wait(1)
+CreateCreatureDoor("kzwfcre",[674.580],0)
+ActionOverride("kzwfcre",SetName(@22))
+Wait(5)
+DisplayStringHead("kzwfcre",@161)
+Wait(3)
+ActionOverride("kzjjcre",StartDialogueNoSet(Player1))
+END    
+

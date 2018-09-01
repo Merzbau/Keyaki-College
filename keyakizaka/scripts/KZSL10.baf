@@ -1,0 +1,15 @@
+IF
+Clicked([0])
+!Global("kzlizuo","GLOBAL",25)	
+THEN 
+RESPONSE #100
+DisplayStringHead(Myself,@144)
+END
+
+IF
+Clicked([0])
+Global("kzlizuo","GLOBAL",25)	
+THEN 
+RESPONSE #100
+DisplayStringHead(Myself,@123)
+END

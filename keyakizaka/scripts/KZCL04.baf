@@ -1,0 +1,27 @@
+IF
+NumDead("kzb1cre",1)
+NumDead("kzb2cre",1)
+NumDead("kzbscre",1)
+Global("kzshuangshou","GLOBAL",18)
+THEN
+RESPONSE #100
+SetGlobal("kzshuangshou","GLOBAL",19)
+SetGlobalTimer("kzchaonao","KZCL04",5)
+END
+
+IF
+Global("kzshuangshou","GLOBAL",19)
+GlobalTimerExpired("kzchaonao","KZCL04")
+THEN
+RESPONSE #100
+SetGlobal("kzshuangshou","GLOBAL",20)
+SetGlobal("kzpingshou","GLOBAL",20)
+SetGlobal("kzjianjing","GLOBAL",20)
+SetGlobal("kzlijia","GLOBAL",20)
+SetGlobal("kzshouwu","GLOBAL",20)	
+SetGlobal("kzlizuo","GLOBAL",20)		
+SetGlobal("kzchangbin","GLOBAL",20)
+ClearAllActions()
+StartCutSceneMode()
+StartCutScene("KZCUTJ7")
+END

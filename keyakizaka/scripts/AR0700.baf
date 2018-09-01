@@ -1,0 +1,110 @@
+IF
+Exists(Player1)
+Global("kzlijiaExist","AR0700",0)
+Global("kzstudents","GLOBAL",1)
+THEN
+RESPONSE #100
+SetGlobal("kzlijiaExist","AR0700",1)
+CreateCreature("kzljcre",[2750.2280],10)
+Continue()
+END
+
+
+IF
+Global("kzarea","AR0700",0)
+THEN
+RESPONSE #100
+SetGlobal("kzarea","AR0700",1)
+AddMapNote([4150.3500],@100)
+Continue()
+END
+
+
+IF
+NumDead("HAQUAT",1)
+Global("kzlijia","GLOBAL",1)
+Global("kzaoko","GLOBAL",1)
+Global("kzaokoinbag","GLOBAL",0)
+THEN
+RESPONSE #100
+ActionOverride("Bag 1",CreateItem("kzlaoko",1,0,0))
+SetGlobal("kzaokoinbag","GLOBAL",1)
+Continue()
+END
+
+
+IF
+Global("kzaokoinbag","GLOBAL",1)
+PartyHasItem("kzlaoko")
+THEN
+RESPONSE #100
+AddJournalEntry(@10008,QUEST)
+SetGlobal("kzaokoinbag","GLOBAL",2)
+SetGlobal("kzaoko","GLOBAL",2)
+Continue()
+END
+
+
+IF
+NumDead("kzmtcre",1)
+Global("kzbeibu","GLOBAL",5)
+THEN
+RESPONSE #100
+SetGlobal("kzbeibu","GLOBAL",6)
+Continue()
+END
+
+
+IF
+Exists(Player1)
+Global("kzjianjing","GLOBAL",24)
+THEN
+RESPONSE #100
+SetGlobalTimer("kzjieshu","GLOBAL",300)
+SetGlobal("kzjianjing","GLOBAL",25)
+Continue()
+END
+
+
+IF
+Exists(Player1)
+GlobalTimerExpired("kzjieshu","GLOBAL")
+Global("kzjianjing","GLOBAL",25)
+THEN
+RESPONSE #100
+SetGlobal("kzlizuo","GLOBAL",25)	
+SetGlobal("kzlijia","GLOBAL",25)
+SetGlobal("kzchangbin","GLOBAL",25)
+SetGlobal("kzshouwu","GLOBAL",25)
+SetGlobal("kzxiangcai","GLOBAL",22)
+SetGlobal("kzjianjing","GLOBAL",26)
+Continue()
+END
+
+
+IF
+Exists(Player1)
+Global("kzshouwu","GLOBAL",26)
+THEN
+RESPONSE #100
+SetGlobalTimer("kzjieshu1","GLOBAL",300)
+SetGlobal("kzshouwu","GLOBAL",27)
+Continue()
+END
+
+
+IF
+Exists(Player1)
+GlobalTimerExpired("kzjieshu1","GLOBAL")
+Global("kzshouwu","GLOBAL",27)	
+THEN
+RESPONSE #100
+SetGlobal("kzshouwu","GLOBAL",28)
+SetGlobal("kztoubu","GLOBAL",30)	
+SetGlobal("kzshuangjiao","GLOBAL",30)
+SetGlobal("kzshuangshou","GLOBAL",30)
+SetGlobal("kzbeibu","GLOBAL",30)
+SetGlobal("kzxiangcai","GLOBAL",23)
+Continue()
+END
+

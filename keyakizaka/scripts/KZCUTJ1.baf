@@ -1,0 +1,18 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId(Player1)
+Wait(1)
+ActionOverride("kzsqcre",FaceObject("kzljcre"))
+ActionOverride("kzljcre",MoveToPoint([765.480]))
+SmallWait(5)
+ActionOverride("kzpscre",FaceObject("kzljcre"))
+DisplayStringHead("kzpscre",@193)
+Wait(2)
+ActionOverride("kzljcre",FaceObject("kzpscre"))
+DisplayStringHead("kzljcre",@194)
+Wait(2)
+ActionOverride("kzpscre",StartDialogueNoSet(Player1))
+END      
+

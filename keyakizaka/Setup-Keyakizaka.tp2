@@ -1,0 +1,421 @@
+BACKUP  ~Keyakizaka/backup~
+AUTHOR  ~Merzbau~
+VERSION ~2.6~
+README  ~Keyakizaka/readme.txt~
+
+
+ALWAYS
+  ACTION_IF GAME_IS ~eet~ BEGIN
+    OUTER_SET bg2_chapter = 12
+  END ELSE BEGIN
+    OUTER_SET bg2_chapter = 0
+  END
+  OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+    OUTER_SET bg2_chapter = bg2_chapter + 1
+    OUTER_TEXT_SPRINT name_source ~bg2_chapter_%i%~
+    OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+  END
+
+
+ACTION_DEFINE_ARRAY kznoconvert BEGIN END
+ACTION_DEFINE_ARRAY kzreload BEGIN Setup END
+
+  LAF HANDLE_CHARSETS
+    INT_VAR
+      infer_charsets = 1
+    STR_VAR
+      tra_path = EVAL ~%MOD_FOLDER%/Translations~
+      noconvert_array = kznoconvert
+      reload_array = kzreload
+  END
+END
+
+
+AUTO_TRA ~Keyakizaka/Translations/%s~
+
+LANGUAGE ~Chinese~
+         ~Schinese~
+         ~Keyakizaka/Translations/Schinese/Setup.tra~
+
+BEGIN @0
+
+
+ACTION_IF GAME_IS ~BG2EE EET~ THEN BEGIN
+LOAD_TRA ~Keyakizaka/Translations/%LANGUAGE%/Setup.tra~
+ADD_JOURNAL @10000 @10001 @10002 @10003 @10004 @10005 @10006 @10007 @10008 @10009 @10010 @10011 @10012 @10013 @10014 @10015 @10016 @10017 @10018 @10019 @10020 @10021 @10022 @10023 @10024 @10025 @10026 @10027 @10028 @10029 @10030 @10031 @10032 @10033
+USING ~Keyakizaka/Translations/%LANGUAGE%/Setup.tra~
+END
+
+
+APPEND ~state.ids~
+~0x80101FEF CD_STATE_NOTVALID~
+UNLESS ~CD_STATE_NOTVALID~
+
+
+LAF HANDLE_AUDIO END
+
+
+COPY ~keyakizaka/creatures/kzdscre.cre~ ~override~
+  SAY NAME1 @1 
+  SAY NAME2 @1 
+  SAY SELECT_COMMON1 @125
+  SAY SELECT_COMMON2 @108 
+  SAY SELECT_COMMON3 @109 
+
+COPY ~keyakizaka/creatures/kzpscre.cre~ ~override~
+  SAY NAME1 @2 
+  SAY NAME2 @2 
+  SAY SELECT_COMMON1 @110 
+  SAY SELECT_COMMON2 @111
+  SAY SELECT_COMMON3 @117
+
+COPY ~keyakizaka/creatures/kzjjcre.cre~ ~override~
+  SAY NAME1 @3 
+  SAY NAME2 @3 
+  SAY SELECT_COMMON1 @115 
+  SAY SELECT_COMMON2 @114
+  SAY SELECT_COMMON3 @116
+
+COPY ~keyakizaka/creatures/kzljcre.cre~ ~override~
+  SAY NAME1 @4 
+  SAY NAME2 @4 
+  SAY SELECT_COMMON1 @120 
+  SAY SELECT_COMMON2 @121
+  SAY SELECT_COMMON3 @122
+
+COPY ~keyakizaka/creatures/kzlzcre.cre~ ~override~
+  SAY NAME1 @5 
+  SAY NAME2 @5 
+  SAY SELECT_COMMON1 @126 
+  SAY SELECT_COMMON2 @127
+  SAY SELECT_COMMON3 @128
+
+COPY ~keyakizaka/creatures/kzswcre.cre~ ~override~
+  SAY NAME1 @6 
+  SAY NAME2 @6 
+  SAY SELECT_COMMON1 @130 
+  SAY SELECT_COMMON2 @131
+  SAY SELECT_COMMON3 @132
+
+COPY ~keyakizaka/creatures/kzqbcre.cre~ ~override~
+  SAY NAME1 @9 
+  SAY NAME2 @9 
+  SAY SELECT_COMMON1 @146
+  SAY SELECT_COMMON2 @147
+  SAY SELECT_COMMON3 @148
+
+COPY ~keyakizaka/creatures/kzwfcre.cre~ ~override~
+  SAY NAME1 @12 
+  SAY NAME2 @12
+  SAY SELECT_COMMON1 @152
+  SAY SELECT_COMMON2 @153
+  SAY SELECT_COMMON3 @154
+
+COPY ~keyakizaka/creatures/kzcbcre.cre~ ~override~
+  SAY NAME1 @13
+  SAY NAME2 @13
+  SAY SELECT_COMMON1 @168
+  SAY SELECT_COMMON2 @169
+  SAY SELECT_COMMON3 @170
+
+COPY ~keyakizaka/creatures/kzsqcre.cre~ ~override~
+  SAY NAME1 @14
+  SAY NAME2 @14
+  SAY SELECT_COMMON1 @174
+  SAY SELECT_COMMON2 @173
+  SAY SELECT_COMMON3 @175
+
+COPY ~keyakizaka/creatures/kzxzcre.cre~ ~override~
+  SAY NAME1 @16
+  SAY NAME2 @16
+  SAY SELECT_COMMON1 @181
+  SAY SELECT_COMMON2 @179
+  SAY SELECT_COMMON3 @180
+
+COPY ~keyakizaka/creatures/kzgzcre.cre~ ~override~
+  SAY NAME1 @7 
+  SAY NAME2 @7
+
+COPY ~keyakizaka/creatures/kzcpcre.cre~ ~override~
+  SAY NAME1 @8 
+  SAY NAME2 @8
+
+COPY ~keyakizaka/creatures/kzyscre.cre~ ~override~
+  SAY NAME1 @10 
+  SAY NAME2 @10
+
+COPY ~keyakizaka/creatures/kzkncre.cre~ ~override~
+  SAY NAME1 @11 
+  SAY NAME2 @11
+
+COPY ~keyakizaka/creatures/kzmtcre.cre~ ~override~
+  SAY NAME1 @15
+  SAY NAME2 @15
+
+COPY ~keyakizaka/creatures/kzxbcre.cre~ ~override~
+  SAY NAME1 @17
+  SAY NAME2 @17
+
+COPY ~keyakizaka/creatures/kzb1cre.cre~ ~override~
+  SAY NAME1 @18
+  SAY NAME2 @18
+
+COPY ~keyakizaka/creatures/kzb2cre.cre~ ~override~
+  SAY NAME1 @18
+  SAY NAME2 @18
+
+COPY ~keyakizaka/creatures/kzbscre.cre~ ~override~
+  SAY NAME1 @19
+  SAY NAME2 @19
+
+COPY ~keyakizaka/creatures/kzbycre.cre~ ~override~
+  SAY NAME1 @20
+  SAY NAME2 @20
+
+COPY ~keyakizaka/creatures/kzglcre.cre~ ~override~
+  SAY NAME1 @21
+  SAY NAME2 @21
+
+COPY_EXISTING ~shop02.cre~ ~override~
+WRITE_ASCII 0x280 ~shop02~ #32
+BUT_ONLY_IF_IT_CHANGES
+
+
+COMPILE EVALUATE_BUFFER
+
+        ~Keyakizaka/Dialogues/kzpsdlg.d~
+        ~Keyakizaka/Dialogues/kzjjdlg.d~
+        ~Keyakizaka/Dialogues/kzljdlg.d~ 
+        ~Keyakizaka/Dialogues/kzlzdlg.d~
+	~Keyakizaka/Dialogues/kzswdlg.d~
+	~Keyakizaka/Dialogues/kzcbdlg.d~
+        ~Keyakizaka/Dialogues/kzdsdlg.d~
+        ~Keyakizaka/Dialogues/kzcpdlg.d~
+	~Keyakizaka/Dialogues/kzqbdlg.d~
+	~Keyakizaka/Dialogues/kzysdlg.d~
+	~Keyakizaka/Dialogues/kzwfdlg.d~
+	~Keyakizaka/Dialogues/kzsqdlg.d~
+	~Keyakizaka/Dialogues/kzxzdlg.d~
+	~Keyakizaka/Dialogues/kzbydlg.d~
+	~Keyakizaka/Dialogues/kzgldlg.d~
+
+
+COMPILE EVALUATE_BUFFER
+
+        ~Keyakizaka/SCRIPTS/KZCL01.baf~
+        ~Keyakizaka/SCRIPTS/KZCL02.baf~
+        ~Keyakizaka/SCRIPTS/KZCL03.baf~
+        ~Keyakizaka/SCRIPTS/KZCL04.baf~
+        ~Keyakizaka/SCRIPTS/KZSL01.baf~
+        ~Keyakizaka/SCRIPTS/KZSL02.baf~
+        ~Keyakizaka/SCRIPTS/KZSL03.baf~
+        ~Keyakizaka/SCRIPTS/KZSL04.baf~
+        ~Keyakizaka/SCRIPTS/KZSL05.baf~
+        ~Keyakizaka/SCRIPTS/KZSL06.baf~
+        ~Keyakizaka/SCRIPTS/KZSL07.baf~
+        ~Keyakizaka/SCRIPTS/KZSL08.baf~
+        ~Keyakizaka/SCRIPTS/KZSL09.baf~
+        ~Keyakizaka/SCRIPTS/KZSL10.baf~
+        ~Keyakizaka/SCRIPTS/KZSL11.baf~
+        ~Keyakizaka/SCRIPTS/KZSL12.baf~
+        ~Keyakizaka/SCRIPTS/KZSL13.baf~
+	~Keyakizaka/SCRIPTS/KZSL14.baf~
+        ~Keyakizaka/SCRIPTS/KZCUTC1.baf~
+        ~Keyakizaka/SCRIPTS/KZCUTC2.baf~
+        ~Keyakizaka/SCRIPTS/KZCUTFY.baf~
+        ~Keyakizaka/SCRIPTS/KZCUTG1.baf~
+        ~Keyakizaka/SCRIPTS/KZCUTG2.baf~
+        ~Keyakizaka/SCRIPTS/KZCUTHY.baf~
+        ~Keyakizaka/SCRIPTS/KZCUTJ0.baf~
+        ~Keyakizaka/SCRIPTS/KZCUTJ1.baf~
+        ~Keyakizaka/SCRIPTS/KZCUTJ2.baf~
+        ~Keyakizaka/SCRIPTS/KZCUTJ3.baf~
+        ~Keyakizaka/SCRIPTS/KZCUTJ4.baf~
+        ~Keyakizaka/SCRIPTS/KZCUTJ5.baf~
+        ~Keyakizaka/SCRIPTS/KZCUTJ6.baf~
+        ~Keyakizaka/SCRIPTS/KZCUTJ7.baf~
+        ~Keyakizaka/SCRIPTS/KZCUTJ8.baf~
+        ~Keyakizaka/SCRIPTS/KZCUTJ9.baf~
+        ~Keyakizaka/SCRIPTS/KZCUTJS.baf~
+        ~Keyakizaka/SCRIPTS/KZCUTKN.baf~
+        ~Keyakizaka/SCRIPTS/KZCUTTC.baf~
+        ~Keyakizaka/SCRIPTS/KZCUTW1.baf~
+        ~Keyakizaka/SCRIPTS/KZCUTW2.baf~
+        ~Keyakizaka/SCRIPTS/KZCUTXJ.baf~
+        ~Keyakizaka/SCRIPTS/KZSCPLZ.baf~
+        ~Keyakizaka/SCRIPTS/KZSCPQB.baf~
+        ~Keyakizaka/SCRIPTS/KZSCPCB.baf~
+        ~Keyakizaka/SCRIPTS/KZSCPXZ.baf~
+
+EXTEND_BOTTOM ~AR0700.bcs~ ~Keyakizaka/scripts/AR0700.baf~ EVALUATE_BUFFER
+EXTEND_BOTTOM ~AR0500.bcs~ ~Keyakizaka/scripts/AR0500.baf~ EVALUATE_BUFFER
+EXTEND_BOTTOM ~AR0400.bcs~ ~Keyakizaka/scripts/AR0400.baf~ EVALUATE_BUFFER
+EXTEND_BOTTOM ~AR1000.bcs~ ~Keyakizaka/scripts/AR1000.baf~ EVALUATE_BUFFER
+
+ACTION_FOR_EACH areaname IN ~AR0319~ ~AR0706~ BEGIN
+ACTION_IF FILE_EXISTS_IN_GAME ~%areaname%.bcs~ THEN BEGIN
+EXTEND_TOP ~%areaname%.bcs~ ~keyakizaka/scripts/%areaname%.baf~ EVALUATE_BUFFER
+END ELSE BEGIN
+COMPILE EVALUATE_BUFFER ~keyakizaka/scripts/%areaname%.baf~
+END
+END
+
+
+COPY ~Keyakizaka/areas/KZCL01.are~  ~override/KZCL01.are~
+COPY ~Keyakizaka/areas/KZCL02.are~  ~override/KZCL02.are~
+COPY ~Keyakizaka/areas/KZCL03.are~  ~override/KZCL03.are~
+COPY ~Keyakizaka/areas/KZCL04.are~  ~override/KZCL04.are~
+COPY ~Keyakizaka/areas/KZCL01.WED~  ~override/KZCL01.WED~
+COPY ~Keyakizaka/areas/KZCL02.WED~  ~override/KZCL02.WED~
+COPY ~Keyakizaka/areas/KZCL03.WED~  ~override/KZCL03.WED~
+COPY ~Keyakizaka/areas/KZCL04.WED~  ~override/KZCL04.WED~
+COPY ~Keyakizaka/areas/KZCL01HT.BMP~  ~override/KZCL01HT.BMP~
+COPY ~Keyakizaka/areas/KZCL01LM.BMP~  ~override/KZCL01LM.BMP~
+COPY ~Keyakizaka/areas/KZCL01SR.BMP~  ~override/KZCL01SR.BMP~
+COPY ~Keyakizaka/areas/KZCL02HT.BMP~  ~override/KZCL02HT.BMP~
+COPY ~Keyakizaka/areas/KZCL02LM.BMP~  ~override/KZCL02LM.BMP~
+COPY ~Keyakizaka/areas/KZCL02SR.BMP~  ~override/KZCL02SR.BMP~
+COPY ~Keyakizaka/areas/KZCL03HT.BMP~  ~override/KZCL03HT.BMP~
+COPY ~Keyakizaka/areas/KZCL03LM.BMP~  ~override/KZCL03LM.BMP~
+COPY ~Keyakizaka/areas/KZCL03SR.BMP~  ~override/KZCL03SR.BMP~
+COPY ~Keyakizaka/areas/KZCL04HT.BMP~  ~override/KZCL04HT.BMP~
+COPY ~Keyakizaka/areas/KZCL04LM.BMP~  ~override/KZCL04LM.BMP~
+COPY ~Keyakizaka/areas/KZCL04SR.BMP~  ~override/KZCL04SR.BMP~
+
+
+ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+
+COPY ~Keyakizaka/ee/KZCL01.MOS~  ~override/KZCL01.MOS~
+COPY ~Keyakizaka/ee/KZCL01.TIS~  ~override/KZCL01.TIS~
+COPY ~Keyakizaka/ee/KCL0100.PVRZ~  ~override/KCL0100.PVRZ~
+COPY ~Keyakizaka/ee/KZCL02.MOS~  ~override/KZCL02.MOS~
+COPY ~Keyakizaka/ee/KZCL02.TIS~  ~override/KZCL02.TIS~
+COPY ~Keyakizaka/ee/KCL0200.PVRZ~  ~override/KCL0200.PVRZ~
+COPY ~Keyakizaka/ee/KCL0201.PVRZ~  ~override/KCL0201.PVRZ~
+COPY ~Keyakizaka/ee/KZCL03.MOS~  ~override/KZCL03.MOS~
+COPY ~Keyakizaka/ee/KZCL03.TIS~  ~override/KZCL03.TIS~
+COPY ~Keyakizaka/ee/KCL0300.PVRZ~  ~override/KCL0300.PVRZ~
+COPY ~Keyakizaka/ee/KCL0301.PVRZ~  ~override/KCL0301.PVRZ~
+COPY ~Keyakizaka/ee/KCL0302.PVRZ~  ~override/KCL0302.PVRZ~
+COPY ~Keyakizaka/ee/KZCL04.MOS~  ~override/KZCL04.MOS~
+COPY ~Keyakizaka/ee/KZCL04.TIS~  ~override/KZCL04.TIS~
+COPY ~Keyakizaka/ee/KCL0400.PVRZ~  ~override/KCL0400.PVRZ~
+COPY ~Keyakizaka/ee/KCL0401.PVRZ~  ~override/KCL0401.PVRZ~
+COPY ~Keyakizaka/ee/KCL0402.PVRZ~  ~override/KCL0402.PVRZ~
+
+END ELSE BEGIN 
+
+COPY ~Keyakizaka/areas/KZCL01.MOS~  ~override/KZCL01.MOS~
+COPY ~Keyakizaka/areas/KZCL01.TIS~  ~override/KZCL01.TIS~
+COPY ~Keyakizaka/areas/KZCL02.MOS~  ~override/KZCL02.MOS~
+COPY ~Keyakizaka/areas/KZCL02.TIS~  ~override/KZCL02.TIS~
+COPY ~Keyakizaka/areas/KZCL03.MOS~  ~override/KZCL03.MOS~
+COPY ~Keyakizaka/areas/KZCL03.TIS~  ~override/KZCL03.TIS~
+COPY ~Keyakizaka/areas/KZCL04.MOS~  ~override/KZCL04.MOS~
+COPY ~Keyakizaka/areas/KZCL04.TIS~  ~override/KZCL04.TIS~
+
+END
+
+
+COPY_EXISTING ar0700.are override
+ LPF fj_are_structure 
+  INT_VAR
+  fj_type = 2    
+  fj_box_left = 3800
+  fj_box_top = 3348
+  fj_box_right = 4017
+  fj_box_bottom = 3504
+  fj_cursor_idx = 30   // door
+  fj_flags        = 4
+ //   fj_flags        = 4   
+ //   fj_flags        = 512  
+ //   fj_flags        = 516  
+  fj_vertex_0 = 3800 + (3447 << 16)
+  fj_vertex_1 = 3942 + (3348 << 16)
+  fj_vertex_2 = 4017 + (3398 << 16)
+  fj_vertex_3 = 3883 + (3504 << 16)
+ STR_VAR
+  fj_structure_type   = region
+  fj_name             = KZCL03  
+  fj_destination_area = KZCL03 
+  fj_destination_name = Entry  
+ END
+ LPF fj_are_structure INT_VAR
+  fj_loc_x = 3831
+  fj_loc_y = 3381
+  fj_orientation = 6 
+ STR_VAR
+  fj_structure_type = entrance
+  fj_name = KZCL03
+ END
+
+
+COPY ~Keyakizaka/bams/5103MS1.BAM~  ~override/5103MS1.BAM~
+COPY ~Keyakizaka/bams/5103MS2.BAM~  ~override/5103MS2.BAM~
+COPY ~Keyakizaka/bams/5103MS3.BAM~  ~override/5103MS3.BAM~
+COPY ~Keyakizaka/bams/5103MS4.BAM~  ~override/5103MS4.BAM~
+COPY ~Keyakizaka/bams/5103MS5.BAM~  ~override/5103MS5.BAM~
+COPY ~Keyakizaka/bams/KZAKICO.BAM~  ~override/KZAKICO.BAM~
+COPY ~Keyakizaka/bams/KZHFICO.BAM~  ~override/KZHFICO.BAM~
+COPY ~Keyakizaka/bams/KZXCICO.BAM~  ~override/KZXCICO.BAM~
+COPY ~Keyakizaka/bams/KZFFICO.BAM~  ~override/KZFFICO.BAM~
+COPY ~Keyakizaka/bams/KZYDICO.BAM~  ~override/KZYDICO.BAM~
+COPY ~Keyakizaka/bams/KZJJICO.BAM~  ~override/KZJJICO.BAM~
+COPY ~Keyakizaka/bams/KZRGICO.BAM~  ~override/KZRGICO.BAM~
+COPY ~Keyakizaka/bams/KZDPICO.BAM~  ~override/KZDPICO.BAM~
+
+ACTION_IF GAME_IS ~SOA TOB BGT~ THEN BEGIN
+
+COPY ~Keyakizaka/bams/KZDGICO.BAM~  ~override/KZDGICO.BAM~
+COPY ~Keyakizaka/bams/KZBZICO.BAM~  ~override/KZBZICO.BAM~
+COPY ~Keyakizaka/bams/KZBZDES.BAM~  ~override/KZBZDES.BAM~
+COPY ~Keyakizaka/bams/KZDGDES.BAM~  ~override/KZDGDES.BAM~
+COPY ~Keyakizaka/bams/KZXCDES.BAM~  ~override/KZXCDES.BAM~
+COPY ~Keyakizaka/bams/KZFFDES.BAM~  ~override/KZFFDES.BAM~
+COPY ~Keyakizaka/bams/KZAKDES.BAM~  ~override/KZAKDES.BAM~
+COPY ~Keyakizaka/bams/KZHFDES.BAM~  ~override/KZHFDES.BAM~
+
+END ELSE BEGIN 
+
+COPY ~Keyakizaka/ee/KZDGICO.BAM~  ~override/KZDGICO.BAM~
+COPY ~Keyakizaka/ee/KZBZICO.BAM~  ~override/KZBZICO.BAM~
+COPY ~Keyakizaka/ee/KZBZDES.BAM~  ~override/KZBZDES.BAM~
+COPY ~Keyakizaka/ee/KZDGDES.BAM~  ~override/KZDGDES.BAM~
+COPY ~Keyakizaka/ee/KZXCDES.BAM~  ~override/KZXCDES.BAM~
+COPY ~Keyakizaka/ee/KZFFDES.BAM~  ~override/KZFFDES.BAM~
+COPY ~Keyakizaka/ee/KZAKDES.BAM~  ~override/KZAKDES.BAM~
+COPY ~Keyakizaka/ee/KZHFDES.BAM~  ~override/KZHFDES.BAM~
+
+END
+
+
+ACTION_IF GAME_IS ~BG2EE EET~ THEN BEGIN
+
+COPY ~keyakizaka/portraits/enhanced/kzpspor.bmp~ ~override~
+COPY ~keyakizaka/portraits/enhanced/kzjjpor.bmp~ ~override~
+COPY ~keyakizaka/portraits/enhanced/kzljpor.bmp~ ~override~
+COPY ~keyakizaka/portraits/enhanced/kzlzpor.bmp~ ~override~
+COPY ~keyakizaka/portraits/enhanced/kzswpor.bmp~ ~override~
+COPY ~keyakizaka/portraits/enhanced/kzcbpor.bmp~ ~override~
+
+END ELSE BEGIN 
+
+COPY ~keyakizaka/portraits/vanilla/kzpspor.bmp~ ~override~
+COPY ~keyakizaka/portraits/vanilla/kzjjpor.bmp~ ~override~
+COPY ~keyakizaka/portraits/vanilla/kzljpor.bmp~ ~override~
+COPY ~keyakizaka/portraits/vanilla/kzlzpor.bmp~ ~override~
+COPY ~keyakizaka/portraits/vanilla/kzswpor.bmp~ ~override~
+COPY ~keyakizaka/portraits/vanilla/kzcbpor.bmp~ ~override~
+
+END
+
+
+ACTION_IF GAME_IS ~SOA TOB BGT~ THEN BEGIN
+LOAD_TRA ~keyakizaka/translations/%LANGUAGE%/items.tra~
+INCLUDE ~%MOD_FOLDER%/lib/items.tpa~
+END
+
+ACTION_IF GAME_IS ~BG2EE EET~ THEN BEGIN
+LOAD_TRA ~keyakizaka/translations/%LANGUAGE%/items_ee.tra~
+INCLUDE ~%MOD_FOLDER%/lib/items_ee.tpa~
+END

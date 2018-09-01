@@ -1,0 +1,10 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("kzsqcre")
+Wait(1)
+MoveToPoint([640.685])
+Face(8)
+StartDialogueNoSet(Player1)
+END      

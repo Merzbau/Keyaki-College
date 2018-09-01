@@ -1,0 +1,59 @@
+
+COPY ~keyakizaka/items/kzxiang.itm~ ~override~
+  SAY NAME1 @0
+  SAY NAME2 @0
+  SAY DESC  @1
+
+COPY ~keyakizaka/items/kzlaoko.itm~ ~override~
+  SAY NAME1 @2
+  SAY NAME2 @2
+  SAY DESC  @3
+
+COPY ~keyakizaka/items/kzfanfu.itm~ ~override~
+  SAY NAME1 @4
+  SAY NAME2 @4
+  SAY DESC  @5
+
+COPY ~keyakizaka/items/kzdanga.itm~ ~override~
+  SAY NAME1 @6
+  SAY NAME2 @6
+  SAY DESC  @7
+
+COPY ~keyakizaka/items/kzhuosh.itm~ ~override~
+  SAY NAME1 @8
+  SAY NAME2 @8
+  SAY DESC  @9
+  
+COPY ~keyakizaka/items/kzxinji.itm~ ~override~
+  SAY NAME1 @10
+  SAY NAME2 @10
+  SAY DESC  @11
+
+COPY ~keyakizaka/items/kzjiato.itm~ ~override~
+  SAY NAME1 @12
+  SAY NAME2 @12
+  SAY DESC  @13
+  
+COPY ~keyakizaka/items/kzshufu.itm~ ~override~
+  SAY NAME2 @14
+  SAY DESC  @15
+  
+COPY ~keyakizaka/items/kzbazhu.itm~ ~override~
+  SAY NAME2 @16
+  SAY DESC  @17
+
+COPY ~keyakizaka/items/kzyada.itm~ ~override~
+  SAY NAME2 @18
+  SAY DESC  @19
+
+COPY ~keyakizaka/items/kzjujia.itm~ ~override~
+  SAY NAME2 @20
+  SAY DESC  @21
+
+COPY ~keyakizaka/items/kzrings.itm~ ~override~
+  SAY NAME2 @22
+  SAY DESC  @23
+
+COPY ~keyakizaka/items/kzdouep.itm~ ~override~
+  SAY NAME2 @24
+  SAY DESC  @25

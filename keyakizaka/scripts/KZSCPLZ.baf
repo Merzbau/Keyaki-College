@@ -1,0 +1,130 @@
+IF
+AreaCheckObject("AR0319",Player1)
+Global("kzfuyuan","GLOBAL",1)
+SpellCastPriest(Player1,CLERIC_LESSER_RESTORATION)
+THEN
+RESPONSE #100
+SetGlobal("kzfuyuan","GLOBAL",2)
+StartDialogueNoSet(Player1)
+END
+
+
+IF
+AreaCheckObject("AR0319",Player1)
+Global("kzfuyuan","GLOBAL",1)
+SpellCastPriest(Player1,CLERIC_RESTORATION)
+THEN
+RESPONSE #100
+SetGlobal("kzfuyuan","GLOBAL",2)
+StartDialogueNoSet(Player1)
+END
+
+
+IF
+AreaCheckObject("AR0319",Player1)
+Global("kzfuyuan","GLOBAL",1)
+SpellCastPriest(Player2,CLERIC_LESSER_RESTORATION)
+THEN
+RESPONSE #100
+SetGlobal("kzfuyuan","GLOBAL",2)
+StartDialogueNoSet(Player1)
+END
+
+
+IF
+AreaCheckObject("AR0319",Player1)
+Global("kzfuyuan","GLOBAL",1)
+SpellCastPriest(Player2,CLERIC_RESTORATION)
+THEN
+RESPONSE #100
+SetGlobal("kzfuyuan","GLOBAL",2)
+StartDialogueNoSet(Player1)
+END
+
+
+IF
+AreaCheckObject("AR0319",Player1)
+Global("kzfuyuan","GLOBAL",1)
+SpellCastPriest(Player3,CLERIC_LESSER_RESTORATION)
+THEN
+RESPONSE #100
+SetGlobal("kzfuyuan","GLOBAL",2)
+StartDialogueNoSet(Player1)
+END
+
+
+IF
+AreaCheckObject("AR0319",Player1)
+Global("kzfuyuan","GLOBAL",1)
+SpellCastPriest(Player3,CLERIC_RESTORATION)
+THEN
+RESPONSE #100
+SetGlobal("kzfuyuan","GLOBAL",2)
+StartDialogueNoSet(Player1)
+END
+
+
+IF
+AreaCheckObject("AR0319",Player1)
+Global("kzfuyuan","GLOBAL",1)
+SpellCastPriest(Player4,CLERIC_LESSER_RESTORATION)
+THEN
+RESPONSE #100
+SetGlobal("kzfuyuan","GLOBAL",2)
+StartDialogueNoSet(Player1)
+END
+
+
+IF
+AreaCheckObject("AR0319",Player1)
+Global("kzfuyuan","GLOBAL",1)
+SpellCastPriest(Player4,CLERIC_RESTORATION)
+THEN
+RESPONSE #100
+SetGlobal("kzfuyuan","GLOBAL",2)
+StartDialogueNoSet(Player1)
+END
+
+
+IF
+AreaCheckObject("AR0319",Player1)
+Global("kzfuyuan","GLOBAL",1)
+SpellCastPriest(Player5,CLERIC_LESSER_RESTORATION)
+THEN
+RESPONSE #100
+SetGlobal("kzfuyuan","GLOBAL",2)
+StartDialogueNoSet(Player1)
+END
+
+
+IF
+AreaCheckObject("AR0319",Player1)
+Global("kzfuyuan","GLOBAL",1)
+SpellCastPriest(Player5,CLERIC_RESTORATION)
+THEN
+RESPONSE #100
+SetGlobal("kzfuyuan","GLOBAL",2)
+StartDialogueNoSet(Player1)
+END
+
+
+IF
+AreaCheckObject("AR0319",Player1)
+Global("kzfuyuan","GLOBAL",1)
+SpellCastPriest(Player6,CLERIC_LESSER_RESTORATION)
+THEN
+RESPONSE #100
+SetGlobal("kzfuyuan","GLOBAL",2)
+StartDialogueNoSet(Player1)
+END
+
+
+IF
+AreaCheckObject("AR0319",Player1)
+Global("kzfuyuan","GLOBAL",1)
+SpellCastPriest(Player6,CLERIC_RESTORATION)
+THEN
+RESPONSE #100
+SetGlobal("kzfuyuan","GLOBAL",2)
+StartDialogueNoSet(Player1)
+END

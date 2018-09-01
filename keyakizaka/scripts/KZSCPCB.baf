@@ -1,0 +1,16 @@
+IF
+Global("kzchangbin","GLOBAL",6)
+THEN
+RESPONSE #100
+SetGlobal("kzchangbin","GLOBAL",7)
+StartDialogueNoSet(Player1)
+END
+
+
+IF
+Global("kzshuangshou","GLOBAL",8)
+THEN
+RESPONSE #100
+SetGlobal("kzshuangshou","GLOBAL",9)
+StartDialogueNoSet(Player1)
+END

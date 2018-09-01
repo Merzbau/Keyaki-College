@@ -1,0 +1,19 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId(Player1)
+Wait(2)
+FaceObject("kzgzcre") 
+DisplayStringHead(Player1,@133)
+CreateVisualEffectObject("ICSTRENI",Player1) 
+Wait(2)
+DisplayStringHead("kzgzcre",@134) 
+Wait(3)
+DisplayStringHead("kzgzcre",@135) 
+Wait(2)
+ActionOverride("kzgzcre",MoveToPoint([2530.2475]))
+ActionOverride("kzgzcre",DestroySelf())
+Wait(5)
+ActionOverride("kzswcre",StartDialogueNoSet(Player1))
+END

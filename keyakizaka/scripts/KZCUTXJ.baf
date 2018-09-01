@@ -1,0 +1,16 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId(Player1)
+MoveViewObject("kzcbcre",INSTANT)
+Wait(1)
+ActionOverride("kzcbcre",ForceSpell("kzcbcre",WIZARD_INVISIBILITY))
+Wait(3)
+ActionOverride("kzcbcre",DestroySelf())
+Wait(2)
+MultiPlayerSync()
+EndCutSceneMode()
+END      
+
+

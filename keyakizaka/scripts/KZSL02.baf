@@ -1,0 +1,6 @@
+IF
+Clicked([0])
+THEN 
+RESPONSE #100
+DisplayStringHead(Myself,@102)
+END

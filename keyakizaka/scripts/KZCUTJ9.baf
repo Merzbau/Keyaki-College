@@ -1,0 +1,26 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId(Player1)
+Wait(2)
+ActionOverride("kzjjcre",ReallyForceSpell("kzjjcre",DRYAD_TELEPORT))
+ActionOverride("kzcbcre",ReallyForceSpell("kzcbcre",DRYAD_TELEPORT))
+ActionOverride("kzswcre",ReallyForceSpell("kzswcre",DRYAD_TELEPORT))
+ActionOverride("kzljcre",ReallyForceSpell("kzljcre",DRYAD_TELEPORT))
+ActionOverride("kzlzcre",ReallyForceSpell("kzlzcre",DRYAD_TELEPORT))
+ActionOverride("kzpscre",ReallyForceSpell("kzpscre",DRYAD_TELEPORT))
+ActionOverride("kzwfcre",ReallyForceSpell("kzwfcre",DRYAD_TELEPORT))
+Wait(2)
+ActionOverride("kzcbcre",DestroySelf())
+ActionOverride("kzpscre",DestroySelf())
+ActionOverride("kzlzcre",DestroySelf())
+ActionOverride("kzljcre",DestroySelf())
+ActionOverride("kzjjcre",DestroySelf())
+ActionOverride("kzswcre",DestroySelf())
+ActionOverride("kzwfcre",DestroySelf())
+Wait(3)
+MultiPlayerSync()
+EndCutSceneMode()
+END    
+

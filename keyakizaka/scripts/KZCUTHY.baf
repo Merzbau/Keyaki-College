@@ -1,0 +1,26 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId("SHOP02") 
+Wait(1)
+Face(6)
+Wait(1)
+CreateVisualEffect("spcrtwpn",[418.356])
+Wait(1)
+Swing()
+Wait(1)
+CreateVisualEffect("spcrtwpn",[418.356])
+Wait(1)
+Swing()
+Face(14)
+Wait(1)
+CreateCreature("kzmtcre",[523.334],7)
+Wait(1)
+DisplayStringHead("SHOP02",@176) 
+Wait(1)		
+SetGlobal("kzbeibu","GLOBAL",5)
+MultiPlayerSync()
+EndCutSceneMode()
+END
+

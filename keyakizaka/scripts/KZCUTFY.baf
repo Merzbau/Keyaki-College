@@ -1,0 +1,13 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId(Player1)
+SetGlobal("kzfuyuan","GLOBAL",3)
+Wait(3)
+ActionOverride("kzlzcre",ForceSpell(Player1,CLERIC_LESSER_RESTORATION)
+Wait(5)
+DisplayStringHead("kzlzcre",@129) 
+Wait(4)                                               
+ActionOverride("kzlzcre",StartDialogueNoSet(Player1))
+END

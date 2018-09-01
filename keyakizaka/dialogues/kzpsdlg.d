@@ -1,0 +1,1067 @@
+EXTEND_BOTTOM INSPECT 15
+	IF ~Global("kzpingshou","GLOBAL",1)~ THEN REPLY @0 GOTO e0
+	END
+
+CHAIN INSPECT e0 
+	@1
+	END
+	IF ~~ THEN REPLY @2 GOTO e1	
+	
+CHAIN INSPECT e1
+	@3
+	END
+	IF ~~ THEN REPLY @4
+EXIT
+
+BEGIN KZPSDLG
+
+CHAIN IF~Global("kzpingshou","GLOBAL",1)~THEN KZPSDLG PS0
+	@5
+	END
+	IF ~~ THEN REPLY @6 GOTO PS1
+	IF ~~ THEN REPLY @50 GOTO PS1	
+
+CHAIN KZPSDLG PS1
+	@7
+	END
+	IF ~~ THEN REPLY @8 GOTO PS1.1
+	IF ~~ THEN REPLY @9 GOTO PS1.2
+
+CHAIN KZPSDLG PS1.1
+	@11
+	== MAZZYJ IF ~InParty("Mazzy") InMyArea("Mazzy") !StateCheck("Mazzy",CD_STATE_NOTVALID)~ THEN @191
+	== ANOMENJ IF ~InParty("Anomen") InMyArea("Anomen") !StateCheck("Anomen",CD_STATE_NOTVALID)~ THEN @192
+	END
+	IF ~~ THEN REPLY @12 GOTO PS1.11
+	IF ~~ THEN REPLY @13 GOTO PS1.11
+	IF ~~ THEN REPLY @14 GOTO PS1.11
+
+CHAIN KZPSDLG PS1.11
+	@15
+	END
+	IF ~~ THEN REPLY @16 GOTO PS1.12
+	IF ~~ THEN REPLY @17 GOTO PS1.12
+
+CHAIN KZPSDLG PS1.12
+	@18
+	== KZPSDLG @19
+	== JAHEIRAJ IF ~InParty("Jaheira") InMyArea("Jaheira") !StateCheck("Jaheira",CD_STATE_NOTVALID)~ THEN @193
+	== EDWINJ IF ~InParty("Edwin") InMyArea("Edwin") !StateCheck("Edwin",CD_STATE_NOTVALID)~ THEN @194
+	END
+	IF ~~ THEN REPLY @20 GOTO PS2
+
+CHAIN KZPSDLG PS1.2
+	@21
+	END
+	IF ~~ THEN REPLY @23 GOTO PS1.21
+	IF ~~ THEN REPLY @24 GOTO PS1.21
+
+CHAIN KZPSDLG PS1.21
+	@25
+	== KZPSDLG @26
+	== AERIEJ IF ~InParty("Aerie") InMyArea("Aerie") !StateCheck("Aerie",CD_STATE_NOTVALID)~ THEN @195
+	== VICONIJ IF ~InParty("Viconia") InMyArea("Viconia") !StateCheck("Viconia",CD_STATE_NOTVALID)~ THEN @196
+	END
+	IF ~~ THEN REPLY @20 GOTO PS2
+
+CHAIN KZPSDLG PS2
+	@27
+	END
+	IF ~~ THEN REPLY @10 GOTO PS3
+	IF ~~ THEN REPLY @28 GOTO PS3
+	IF ~~ THEN REPLY @29 GOTO PS3
+
+CHAIN KZPSDLG PS3
+	@30
+	END
+	IF ~~ THEN REPLY @31 GOTO PS4
+	IF ~~ THEN REPLY @100 GOTO PS4	
+
+CHAIN KZPSDLG PS4
+	@32
+	== KZPSDLG @33
+	== YOSHJ IF ~InParty("Yoshimo") InMyArea("Yoshimo") !StateCheck("Yoshimo",CD_STATE_NOTVALID)~ THEN @197
+	END
+	IF ~~ THEN REPLY @34 GOTO PS4.1	
+	IF ~~ THEN REPLY @35 GOTO PS4.1	
+
+CHAIN KZPSDLG PS4.1
+	@37
+	== HAERDAJ IF ~InParty("Haerdalis") InMyArea("Haerdalis") !StateCheck("Haerdalis",CD_STATE_NOTVALID)~ THEN @198
+	END
+	IF ~~ THEN REPLY @38 GOTO PS5
+	IF ~~ THEN REPLY @39 GOTO PS5
+
+CHAIN KZPSDLG PS5
+	@41
+	=@42
+	END
+	IF ~~ THEN REPLY @44 GOTO PS6
+	IF ~~ THEN REPLY @101 GOTO PS6	
+
+CHAIN KZPSDLG PS6
+	@45
+	END
+	IF ~~ THEN
+	DO ~SetGlobal("kzpingshou","GLOBAL",2)
+	AddJournalEntry(@10002,QUEST)~
+EXIT
+
+CHAIN IF~Global("kzpingshou","GLOBAL",2)~THEN KZPSDLG PS7
+	@46
+	END
+	IF ~Global("kzshouwu","GLOBAL",2)
+	Global("kzlizuo","GLOBAL",2)
+	Global("kzlijia","GLOBAL",2)
+	Global("kzjianjing","GLOBAL",2)~ THEN REPLY @158 GOTO PS8	
+	IF ~Global("kzstudents","GLOBAL",0)~ THEN REPLY @47 GOTO PS7.1
+	IF ~Global("kzstudents","GLOBAL",1)~ THEN REPLY @107 GOTO PS7.8	
+	IF ~~ THEN REPLY @48 GOTO PS7.2
+	IF ~~ THEN REPLY @49 GOTO PS7.3
+	IF ~~ THEN REPLY @51 GOTO PS7.5
+	IF ~~ THEN REPLY @52 GOTO PS7.6
+	IF ~~ THEN REPLY @79  GOTO PS7.7	
+
+CHAIN KZPSDLG PS7.1
+	@53
+	=@54
+	=@55
+	END
+	IF ~~ THEN REPLY @56 GOTO PS7.11
+	IF ~~ THEN REPLY @104 GOTO PS7.11
+
+CHAIN KZPSDLG PS7.11
+	@57
+	== IMOEN2J IF ~InParty("Imoen2") InMyArea("Imoen2") !StateCheck("Imoen2",CD_STATE_NOTVALID)~ THEN @199
+	END	
+	IF ~~ THEN REPLY @58 GOTO PS7.12
+	IF ~~ THEN REPLY @59 GOTO PS7.13	
+	IF ~~ THEN REPLY @60 GOTO PS7.14	
+
+CHAIN KZPSDLG PS7.12	
+	@61
+	== KZPSDLG @62
+	== KZPSDLG @63	
+	== KZPSDLG @64
+	== KZPSDLG @43
+	== MINSCJ IF ~InParty("Minsc") InMyArea("Minsc") !StateCheck("Minsc",CD_STATE_NOTVALID)~ THEN @200
+	== VALYGARJ IF ~InParty("Valygar") InMyArea("Valygar") !StateCheck("Valygar",CD_STATE_NOTVALID)~ THEN @201
+	== KZPSDLG @65
+	END
+	IF ~~ THEN REPLY @66 GOTO PS7.121	
+	IF ~~ THEN REPLY @67 GOTO PS7.121
+
+CHAIN KZPSDLG PS7.121
+	@68
+	END	
+	IF ~~ THEN 
+	DO ~SetGlobal("kzstudents","GLOBAL",1)
+	AddJournalEntry(@10003,QUEST)~
+EXIT
+
+CHAIN KZPSDLG PS7.13
+	@69
+	END
+	IF ~~ THEN REPLY @70 GOTO PS7.131		
+	IF ~~ THEN REPLY @71 GOTO PS7.12	
+
+CHAIN KZPSDLG PS7.131
+	@72
+	=@73
+	END
+	IF ~~ THEN REPLY @74 GOTO PS7.12
+
+CHAIN KZPSDLG PS7.14
+	@75
+	END
+	IF ~~ THEN REPLY @76 GOTO PS7.141 	
+	IF ~~ THEN REPLY @77 GOTO PS7.12 
+
+CHAIN KZPSDLG PS7.141
+	@78
+	END  
+	IF ~~ THEN REPLY @77 GOTO PS7.12
+
+CHAIN KZPSDLG PS7.7
+	@80
+	END
+	IF ~~ THEN 
+EXIT
+
+CHAIN KZPSDLG PS7.2
+	@81
+	END
+	IF ~~ THEN REPLY @82 GOTO PS7.21
+
+CHAIN KZPSDLG PS7.21
+	@85
+	== YOSHJ IF ~InParty("Yoshimo") InMyArea("Yoshimo") !StateCheck("Yoshimo",CD_STATE_NOTVALID)~ THEN @202
+	END
+	IF ~~ THEN REPLY @84 GOTO PS7.23
+
+CHAIN KZPSDLG PS7.23
+	@87
+	END
+	IF ~~ THEN REPLY @88 GOTO PS7.24	
+	IF ~~ THEN REPLY @89 GOTO PS7.25	
+	IF ~~ THEN REPLY @90 GOTO PS7.26		
+
+CHAIN KZPSDLG PS7.24
+	@91 
+	=@92
+	END
+	IF ~~ THEN 
+EXIT
+
+CHAIN KZPSDLG PS7.25
+	@93 
+	=@92
+	END
+	IF ~~ THEN 
+EXIT
+
+CHAIN KZPSDLG PS7.26
+	@94 
+	=@92
+	END
+	IF ~~ THEN 
+EXIT
+
+CHAIN KZPSDLG PS7.3
+	@95 
+	=@96
+	END	
+	IF ~~ THEN REPLY @97 GOTO PS7.31
+	IF ~~ THEN REPLY @98 GOTO PS7.31
+
+CHAIN KZPSDLG PS7.31
+	@99
+	== NALIAJ IF ~InParty("Nalia") InMyArea("Nalia") !StateCheck("Nalia",CD_STATE_NOTVALID)~ THEN @203
+	== KZPSDLG @92
+	END
+	IF ~~ THEN 
+EXIT
+
+CHAIN KZPSDLG PS7.8
+	@108
+	=@111
+	END
+	IF ~~ THEN REPLY @109 GOTO PS7.81		
+	IF ~~ THEN REPLY @110 GOTO PS7.81		
+
+CHAIN KZPSDLG PS7.81
+	@112
+	== KORGANJ IF ~InParty("Korgan") InMyArea("Korgan") !StateCheck("Korgan",CD_STATE_NOTVALID)~ THEN @204
+	END
+	IF ~~ THEN REPLY @113 GOTO PS7.82
+	IF ~~ THEN REPLY @114 GOTO PS7.83
+	IF ~~ THEN REPLY @106 GOTO PS7.84	
+
+CHAIN KZPSDLG PS7.82
+	@115
+	=@92
+	END	
+	IF ~~ THEN 
+EXIT
+
+CHAIN KZPSDLG PS7.83
+	@105
+	=@92
+	END	
+	IF ~~ THEN 
+EXIT
+
+CHAIN KZPSDLG PS7.84
+	@157
+	=@92
+	END	
+	IF ~~ THEN 
+EXIT
+
+CHAIN KZPSDLG PS7.5
+	@116
+	== KZPSDLG @117
+	== KELDORJ IF ~InParty("Keldorn") InMyArea("Keldorn") !StateCheck("Keldorn",CD_STATE_NOTVALID)~ THEN @205
+	END
+	IF ~~ THEN REPLY @118 GOTO PS7.51	
+	IF ~~ THEN REPLY @119 GOTO PS7.52	   	
+	IF ~~ THEN REPLY @120 GOTO PS7.53	  	
+
+CHAIN KZPSDLG PS7.51
+	@121
+	END
+	IF ~~ THEN REPLY @122 GOTO PS7.54 		
+
+CHAIN KZPSDLG PS7.54	
+	@123
+	=@92
+	END
+	IF ~~ THEN 
+EXIT
+
+CHAIN KZPSDLG PS7.52	
+	@124
+	END
+	IF ~~ THEN REPLY @125 GOTO PS7.55
+	IF ~~ THEN REPLY @103 GOTO PS7.55
+
+CHAIN KZPSDLG PS7.55
+	@126
+	=@92
+	END
+	IF ~~ THEN 
+EXIT
+
+CHAIN KZPSDLG PS7.53
+	@127
+	=@92
+	END
+	IF ~~ THEN 
+EXIT
+
+CHAIN KZPSDLG PS7.6
+	@128
+	== KZPSDLG @129
+	== KZPSDLG @130
+	== JANJ IF ~InParty("Jan") InMyArea("Jan") !StateCheck("Jan",CD_STATE_NOTVALID)~ THEN @206
+	== KZPSDLG @131
+	END
+	IF ~~ THEN REPLY @132 GOTO PS7.61
+	IF ~~ THEN REPLY @133 GOTO PS7.61
+
+CHAIN KZPSDLG PS7.61
+	@134
+	== KZPSDLG @135
+	== KZPSDLG @136
+	== JANJ IF ~InParty("Jan") InMyArea("Jan") !StateCheck("Jan",CD_STATE_NOTVALID)~ THEN @207	
+	END
+	IF ~~ THEN REPLY @137 GOTO PS7.62
+
+CHAIN KZPSDLG PS7.62
+	@138
+	=@92
+	END
+	IF ~~ THEN 
+EXIT
+	
+CHAIN KZPSDLG PS8
+	@159
+	=@160
+	END
+	IF ~~ THEN REPLY @161 GOTO PS8.1
+	IF ~~ THEN REPLY @162 GOTO PS8.2	
+	IF ~~ THEN REPLY @163 GOTO PS8.3	
+
+CHAIN KZPSDLG PS8.1
+	@164
+	=@165
+	END
+	IF ~~ THEN REPLY @166 GOTO PS8.4	
+
+CHAIN KZPSDLG PS8.2
+	@167
+	=@165
+	END
+	IF ~~ THEN REPLY @169 GOTO PS8.4	
+	
+CHAIN KZPSDLG PS8.3
+	@168
+	=@165
+	END	
+	IF ~~ THEN REPLY @169 GOTO PS8.4	
+
+CHAIN KZPSDLG PS8.4	
+	@170
+	END
+	IF ~~ THEN REPLY @171 GOTO PS8.5		
+	IF ~~ THEN REPLY @172 GOTO PS8.5	
+
+CHAIN KZPSDLG PS8.5
+	@173
+	=@174	
+	END			
+	IF ~~ THEN REPLY @176 GOTO PS8.6	
+	
+CHAIN KZPSDLG PS8.6	
+	@177
+	=@178
+	END
+	IF ~~ THEN
+	DO~SetGlobal("kzstudents","GLOBAL",2)
+	SetGlobal("kzdeshan","GLOBAL",3)	
+	SetGlobal("kzpingshou","GLOBAL",3)
+	SetGlobal("kzshouwu","GLOBAL",3)	
+	SetGlobal("kzjianjing","GLOBAL",3)
+	SetGlobal("kzlizuo","GLOBAL",3)
+	SetGlobal("kzlijia","GLOBAL",3)
+	GiveItemCreate("kzdouep",Player1,1,0,0)
+	EraseJournalEntry(@10000)
+	EraseJournalEntry(@10001)	
+	EraseJournalEntry(@10002)	
+	EraseJournalEntry(@10003)
+	AddJournalEntry(@10015,QUEST_DONE)
+	AddJournalEntry(@10016,QUEST)	
+	AddExperienceParty(6000)
+	MoveToPointNoInterrupt([2870.1820])
+	DestroySelf()~
+EXIT
+	
+CHAIN IF~Global("kzpingshou","GLOBAL",3)~THEN KZPSDLG SNPS0	
+	@208
+	END	
+	IF ~~ THEN REPLY @211 GOTO SNPS3		
+	
+CHAIN KZPSDLG SNPS3	
+	@215
+	END
+	IF ~~ THEN REPLY @213 GOTO SNPS4	
+	
+CHAIN KZPSDLG SNPS4		
+	@216
+	=@217
+	END		
+	IF ~~ THEN REPLY @219 GOTO SNPS5		
+	
+CHAIN KZPSDLG SNPS5	
+	@220
+	END
+	IF ~~ THEN REPLY @221 GOTO SNPS6
+	
+CHAIN KZPSDLG SNPS6	
+	@223
+	== KZPSDLG @224
+	== KZJJDLG @225
+	== KZSWDLG @226
+	== KZLZDLG @227
+	== KZSWDLG @228
+	== KZPSDLG @229
+	END	
+	IF ~~ THEN REPLY @230 GOTO SNPS7
+	
+CHAIN KZPSDLG SNPS7	
+	@233
+	== KZPSDLG @234
+	== KZPSDLG @235
+	== KZPSDLG @236
+	== KZLZDLG @237
+	== KZSWDLG @238
+	== KZJJDLG @239
+	== KZLJDLG @240
+	== KZPSDLG @186
+	END
+	IF ~~ THEN REPLY @242 GOTO SNPS8	
+	
+CHAIN KZPSDLG SNPS8
+	@245
+	=@248
+	END	
+	IF ~~ THEN REPLY @247 GOTO SNPS9	
+	
+CHAIN KZPSDLG SNPS9
+	@249
+	=@250
+	END
+	IF ~~ THEN 	
+	DO~SetGlobal("kzdeshan","GLOBAL",4)
+	SetGlobal("kzpingshou","GLOBAL",4)
+	SetGlobal("kzshouwu","GLOBAL",4)	
+	SetGlobal("kzjianjing","GLOBAL",4)
+	SetGlobal("kzlizuo","GLOBAL",4)
+	SetGlobal("kzlijia","GLOBAL",4)
+	AddJournalEntry(@10017,QUEST)	
+	AddExperienceParty(2500)~	
+EXIT
+	
+CHAIN IF~Global("kzpingshou","GLOBAL",4)~THEN KZPSDLG SNPS10
+	@251
+	END
+	IF ~OR(2) Global("kzdiaocha","GLOBAL",0) 
+	Global("kzdiaocha","GLOBAL",1)~ THEN REPLY @252 GOTO SNPS10.1 	
+	IF ~Global("kzshouwuDC","GLOBAL",1)
+	Global("kzjianjingDC","GLOBAL",1)
+	Global("kzlijiaDC","GLOBAL",1)	
+	Global("kzlizuoDC","GLOBAL",1)~ THEN REPLY @253 GOTO SNPS20  
+	IF ~Global("kzdiaocha","GLOBAL",1)~ THEN REPLY @262 GOTO SNPS12
+	IF ~Global("kzdiaocha","GLOBAL",2)~ THEN REPLY @285 GOTO SNPS15
+	IF ~Global("kzdiaocha","GLOBAL",3)~ THEN REPLY @308 GOTO SNPS19	
+	
+CHAIN KZPSDLG SNPS10.1
+	@255
+	END
+	IF ~~ THEN REPLY @257 GOTO SNPS11 		
+	
+CHAIN KZPSDLG SNPS11
+	@260
+	=@261
+	END
+	IF ~~ THEN
+EXIT	
+	
+CHAIN KZPSDLG SNPS12	
+	@263
+	END
+	IF ~~ THEN REPLY @264 GOTO SNPS12.1	
+	
+CHAIN KZPSDLG SNPS12.1
+	@266
+	=@267
+	END
+	IF ~~ THEN REPLY @265 GOTO SNPS12.2	
+	
+CHAIN KZPSDLG SNPS12.2
+	@268
+	=@269
+	END
+	IF ~~ THEN REPLY @270 GOTO SNPS12.3		
+	
+CHAIN KZPSDLG SNPS12.3	
+	@271
+	== KZSWDLG @272
+	== KZLZDLG @273
+	== KZSWDLG @274
+	== KZJJDLG @275
+	== KZSWDLG @276
+	== KZPSDLG @277
+	== KZLJDLG @278
+	== KZPSDLG @279
+	END
+	IF ~~ THEN REPLY @280 GOTO SNPS13		
+	
+CHAIN KZPSDLG SNPS13
+	@281
+	END
+	IF ~~ THEN REPLY @282 GOTO SNPS14 		
+	
+CHAIN KZPSDLG SNPS14	
+	@284
+	END
+	IF ~~ THEN 
+	DO ~SetGlobal("kzdiaocha","GLOBAL",2)
+	SetGlobal("kzdeshan","GLOBAL",5)
+	EraseJournalEntry(@10016)
+	EraseJournalEntry(@10017)
+	AddJournalEntry(@10018,QUEST_DONE)	
+	AddExperienceParty(3000)~	
+EXIT
+	
+CHAIN KZPSDLG SNPS15
+	@286
+	== KZPSDLG @287
+	== KZLZDLG @288
+	== KZSWDLG @289
+	== KZJJDLG @290
+	== KZLZDLG @291
+	== KZJJDLG @292
+	END
+	IF ~~ THEN REPLY @293 GOTO SNPS16	
+	
+CHAIN KZPSDLG SNPS16	
+	@294
+	== KZSWDLG @295
+	== KZPSDLG @296
+	== KZLZDLG @297
+	== KZJJDLG @298
+	== KZPSDLG @299
+	END		
+	IF ~~ THEN REPLY @301 GOTO SNPS17	
+	
+CHAIN KZPSDLG SNPS17		
+	@302
+	=@303
+	END
+	IF ~~ THEN REPLY @304 GOTO SNPS18
+	
+CHAIN KZPSDLG SNPS18	
+	@306
+	=@307
+	END
+	IF ~~ THEN 
+	DO ~SetGlobal("kzdiaocha","GLOBAL",3)
+	AddJournalEntry(@10019,QUEST)~	
+EXIT	
+	
+CHAIN KZPSDLG SNPS19	
+	@309
+	END
+	IF ~~ THEN 	
+EXIT	
+	
+CHAIN KZPSDLG SNPS20
+	@258
+	END
+	IF ~~ THEN REPLY @310 GOTO SNPS20.1			
+	
+CHAIN KZPSDLG SNPS20.1
+	@311
+	=@312
+	END
+	IF ~~ THEN REPLY @314 GOTO SNPS20.2	
+	
+CHAIN KZPSDLG SNPS20.2	
+	@315
+	END
+	IF ~~ THEN REPLY @317 GOTO SNPS20.3		
+	
+CHAIN KZPSDLG SNPS20.3	
+	@318
+	=@319
+	END
+	IF ~~ THEN REPLY @316 GOTO SNPS20.31		
+	
+CHAIN KZPSDLG SNPS20.31
+	@313
+	=@305
+	END
+	IF ~~ THEN 
+	DO ~SetGlobal("kzshouwuDC","GLOBAL",2)	
+	SetGlobal("kzjianjingDC","GLOBAL",2)
+	SetGlobal("kzlijiaDC","GLOBAL",2)	
+	SetGlobal("kzlizuoDC","GLOBAL",2)
+	GiveItemCreate("kzshufu",Player1,1,0,0)~
+EXIT
+
+CHAIN IF~Global("kzpingshou","GLOBAL",5)~THEN KZPSDLG TRPS1
+	@320
+	END
+	IF ~~ THEN REPLY @321 GOTO TRPS2
+ 	
+CHAIN KZPSDLG TRPS2
+	@322
+	END
+	IF ~~ THEN REPLY @323 GOTO TRPS3	
+	
+CHAIN KZPSDLG TRPS3	
+	@324
+	END
+	IF ~~ THEN REPLY @325 GOTO TRPS4	
+	
+CHAIN KZPSDLG TRPS4	
+	@326
+	END
+	IF ~~ THEN 
+EXIT
+
+CHAIN IF~Global("kzpingshou","GLOBAL",6)~THEN KZPSDLG TRPS5	
+	@327
+	END
+	IF ~~ THEN REPLY @328 GOTO TRPS5.1		
+	IF ~Global("kzgebo","GLOBAL",1)
+	PartyHasItem("kzdanga")~ THEN REPLY @329 GOTO TRPS5.2	
+	
+CHAIN KZPSDLG TRPS5.1	
+	@330
+	=@331
+	END
+	IF ~~ THEN REPLY @332 GOTO TRPS5.12		
+	
+CHAIN KZPSDLG TRPS5.12		
+	@333
+	END
+	IF ~~ THEN 
+EXIT
+
+CHAIN KZPSDLG TRPS5.2	
+	@334
+	== KZWFDLG @335
+	== KZPSDLG @336
+	== KZWFDLG @337
+	== KZPSDLG @338
+	== KZPSDLG @339
+	== KZWFDLG @340	
+	== KZPSDLG @341
+	END
+	IF ~~ THEN 
+	DO~SetGlobal("kzgebo","GLOBAL",2)~	
+EXIT		
+	
+CHAIN IF~Global("kzpingshou","GLOBAL",7)~THEN KZPSDLG TRPS6	
+	@342
+	END
+	IF ~~ THEN REPLY @343 GOTO TRPS6.1
+	IF ~PartyHasItem("kzxinji")~ THEN REPLY @346 GOTO TRPS7
+	
+CHAIN KZPSDLG TRPS6.1	
+	@344
+	=@345
+	END
+	IF ~~ THEN 
+EXIT		
+	
+CHAIN KZPSDLG TRPS7
+	@347
+	END	
+	IF ~~ THEN REPLY @348 GOTO TRPS7.1
+	
+CHAIN KZPSDLG TRPS7.1
+	@349
+	== KZPSDLG @350
+	== KZSWDLG @351
+	== KZLZDLG @352
+	== KZJJDLG @353
+	== KZPSDLG @354
+	END
+	IF ~~ THEN REPLY @355 GOTO TRPS7.2
+
+CHAIN KZPSDLG TRPS7.2
+	@356
+	END
+	IF ~~ THEN REPLY @357 GOTO TRPS7.3
+	IF ~~ THEN REPLY @358 GOTO TRPS7.3
+
+CHAIN KZPSDLG TRPS7.3
+	@359
+	=@360
+	=@361
+	=@362
+	END
+	IF ~~ THEN 
+	DO~TakePartyItem("kzxinji")
+	SetGlobal("kzpingshou","GLOBAL",8)	
+	SetGlobal("kzjianjing","GLOBAL",8)		
+	SetGlobal("kzshouwu","GLOBAL",8)	
+	SetGlobal("kzlijia","GLOBAL",8)		   
+	SetGlobal("kzlizuo","GLOBAL",8)
+	SetGlobal("kzchangbin","GLOBAL",8)	   
+	ClearAllActions()
+	CreateCreature("kzsqcre",[1020.760],6)
+	StartCutSceneMode()
+	StartCutScene("KZCUTTC")~
+EXIT
+	
+CHAIN IF~Global("kzpingshou","GLOBAL",8)~THEN KZPSDLG TRPS8	
+	@363
+	END
+	IF ~!Global("kztuibu","GLOBAL",3)
+	!Global("kztuibu","GLOBAL",4)~ THEN REPLY @364 GOTO TRPS8.1
+	IF ~Global("kztuibu","GLOBAL",2)~ THEN REPLY @368 GOTO TRPS8.2	
+	IF ~Global("kztuibu","GLOBAL",3)~ THEN REPLY @364 GOTO TRPS8.5	
+	IF ~Global("kztuibu","GLOBAL",4)~ THEN REPLY @386 GOTO TRPS8.9	
+	
+CHAIN KZPSDLG TRPS8.1
+	@365
+	=@366
+	=@367
+	END
+	IF ~~ THEN 
+EXIT	
+	
+CHAIN KZPSDLG TRPS8.2	
+	@369
+	== KZSWDLG @370
+	== KZJJDLG @371
+	END
+	IF ~~ THEN REPLY @372 EXTERN KZLZDLG TRPS8.3
+
+CHAIN KZLZDLG TRPS8.3
+	@373
+	== KZLJDLG @374
+	== KZSWDLG @375
+	== KZPSDLG @376
+	END
+	IF ~~ THEN REPLY @377 EXTERN KZPSDLG TRPS8.4
+
+CHAIN KZPSDLG TRPS8.4	
+	@378
+	END
+	IF ~~ THEN 
+	DO ~SetGlobal("kztuibu","GLOBAL",3)~
+EXIT
+	
+CHAIN KZPSDLG TRPS8.5	
+	@379
+	END
+	IF ~~ THEN REPLY @380 GOTO TRPS8.6	
+	
+CHAIN KZPSDLG TRPS8.6		
+	@381
+	END
+	IF ~~ THEN REPLY @382 GOTO TRPS8.7		
+	
+CHAIN KZPSDLG TRPS8.7
+	@383
+	== KZLJDLG @388
+	== KZPSDLG @389
+	== KZLJDLG @390
+	END
+	IF ~~ THEN REPLY @384 GOTO TRPS8.8	
+	
+CHAIN KZPSDLG TRPS8.8	
+	@385
+	END
+	IF ~~ THEN 
+	DO ~SetGlobal("kztuibu","GLOBAL",4)
+	SetGlobal("kzbeibu","GLOBAL",4)
+	AddJournalEntry(@10025,QUEST)~
+EXIT
+		
+CHAIN KZPSDLG TRPS8.9		
+	@387
+	END
+	IF ~~ THEN
+EXIT	
+	
+CHAIN IF~Global("kzpingshou","GLOBAL",10)~THEN KZPSDLG TRPS9
+	@391
+	END
+	IF ~PartyHasItem("kzhuosh")~ THEN REPLY @392 GOTO TRPS10
+	IF ~~ THEN REPLY @393 GOTO TRPS10.1	
+	
+CHAIN KZPSDLG TRPS10.1
+	@394
+	END
+	IF ~~ THEN
+EXIT		
+	
+CHAIN KZPSDLG TRPS10
+	@395
+	=@396
+	END
+	IF ~~ THEN	
+	DO ~SetGlobal("kzshuangshou","GLOBAL",7)
+	TakePartyItem("kzhuosh")
+	EraseJournalEntry(@10023)
+	EraseJournalEntry(@10024)
+	EraseJournalEntry(@10025)
+	EraseJournalEntry(@10026)	
+	AddJournalEntry(@10027,QUEST_DONE)
+	AddExperienceParty(6000)~
+EXIT
+
+CHAIN IF~Global("kzpingshou","GLOBAL",12)~THEN KZPSDLG TRPS11
+	@397
+	END
+	IF ~!Global("kzxiangcai","GLOBAL",10)
+	!Global("kzxiangcai","GLOBAL",11)~ THEN REPLY @398 GOTO TRPS12.1
+	IF ~Global("kzxiangcai","GLOBAL",10)
+	!PartyHasItem("kzjiato")~ THEN REPLY @412 GOTO TRPS12.5	
+	IF ~Global("kzxiangcai","GLOBAL",10)
+	PartyHasItem("kzjiato")~ THEN REPLY @416 GOTO TRPS12.7			
+	IF ~Global("kzxiangcai","GLOBAL",11)~ THEN REPLY @421 GOTO TRPS12.9		
+	IF ~Global("kzxiangcai","GLOBAL",11)~ THEN REPLY @399 GOTO TRPS12.2
+
+CHAIN KZPSDLG TRPS12.2
+	@400
+	=@401
+	END
+	IF ~~ THEN 
+EXIT
+
+CHAIN KZPSDLG TRPS12.1
+	@406
+	END
+	IF ~~ THEN REPLY @407 GOTO TRPS12.3	
+
+CHAIN KZPSDLG TRPS12.3
+	@408
+	END
+	IF ~~ THEN REPLY @409 GOTO TRPS12.4	
+	
+CHAIN KZPSDLG TRPS12.4
+	@410
+	=@411
+	END
+	IF ~~ THEN 
+	DO ~SetGlobal("kzxiangcai","GLOBAL",10)
+	SetGlobal("kzdiaocha","GLOBAL",14)
+	AddJournalEntry(@10029,QUEST)~	
+EXIT
+
+CHAIN KZPSDLG TRPS12.5	
+	@413
+	END
+	IF ~~ THEN REPLY @414 GOTO TRPS12.6		
+	
+CHAIN KZPSDLG TRPS12.6	
+	@415
+	END
+	IF ~~ THEN
+EXIT	
+
+CHAIN KZPSDLG TRPS12.7
+	@417
+	END
+	IF ~~ THEN REPLY @418 GOTO TRPS12.8
+
+CHAIN KZPSDLG TRPS12.8
+	@419
+	=@420
+	END
+	IF ~~ THEN 
+	DO ~TakePartyItem("kzjiato")
+	SetGlobal("kzxiangcai","GLOBAL",11)	
+	AddJournalEntry(@10030,QUEST)~
+EXIT
+	
+CHAIN KZPSDLG TRPS12.9
+	@402
+	== KZJJDLG @403
+	== KZSWDLG @404
+	== KZPSDLG @405
+	END
+	IF ~~ THEN 
+	DO ~SetGlobal("kzpingshou","GLOBAL",13)
+	SetGlobal("kzjianjing","GLOBAL",13)
+	SetGlobal("kzlijia","GLOBAL",13)
+	SetGlobal("kzshouwu","GLOBAL",13)	
+	SetGlobal("kzlizuo","GLOBAL",13)		
+	SetGlobal("kzchangbin","GLOBAL",13)
+	SetGlobal("kzxiangcai","GLOBAL",13)
+	SetGlobal("kzdiaocha","GLOBAL",23)
+	ClearAllActions()
+	StartCutSceneMode()
+	StartCutScene("KZCUTJ0")~
+EXIT
+
+CHAIN IF~Global("kzpingshou","GLOBAL",13)~THEN KZPSDLG FLPS1
+	@422
+	== KZLJDLG @423
+	== KZPSDLG @424
+	== KZSQDLG @425
+	== KZPSDLG @426
+	== KZLJDLG @283
+	== KZSWDLG @427
+	== KZJJDLG @300
+	END
+	IF ~~ THEN REPLY @259 EXTERN KZPSDLG FLPS2	
+	
+CHAIN KZPSDLG FLPS2
+	@256
+	=@254
+	=@246
+	=@244
+	END
+	IF ~~ THEN REPLY @243 EXTERN KZCBDLG FLPS3	
+	
+CHAIN KZCBDLG FLPS3
+	@232
+	== KZLZDLG @231
+	== KZPSDLG @222
+	== KZPSDLG @218
+	END
+	IF ~~ THEN REPLY @214 EXTERN KZPSDLG FLPS4		
+	
+CHAIN KZPSDLG FLPS4	
+	@212
+	== KZJJDLG @210
+	== KZSWDLG @209
+	== KZLZDLG @190
+	END
+	IF ~~ THEN REPLY @189 EXTERN KZPSDLG FLPS5	
+	
+CHAIN KZPSDLG FLPS5
+	@187
+	== KZLJDLG @179
+	== KZJJDLG @175
+	== KZLJDLG @156
+	END
+	IF ~~ THEN REPLY @155 EXTERN KZLJDLG FLPS6		
+	
+CHAIN KZLJDLG FLPS6
+	@154
+	== KZLJDLG @153
+	== KZLJDLG @152
+	== KZPSDLG @151
+	== KZJJDLG @150
+	END
+	IF ~~ THEN REPLY @149 EXTERN KZLJDLG FLPS7		
+	
+CHAIN KZLJDLG FLPS7
+	@148
+	== KZSQDLG @147
+	END
+	IF ~~ THEN 	
+	DO ~SetGlobal("kzpingshou","GLOBAL",14)
+	SetGlobal("kzjianjing","GLOBAL",14)
+	SetGlobal("kzlijia","GLOBAL",14)
+	SetGlobal("kzshouwu","GLOBAL",14)	
+	SetGlobal("kzlizuo","GLOBAL",14)		
+	SetGlobal("kzchangbin","GLOBAL",14)
+	SetGlobal("kzxiangcai","GLOBAL",14)
+	SetGlobal("kzdiaocha","GLOBAL",24)
+	SetGlobal("kzbeibu","GLOBAL",24)
+	CreateCreature("kzxzcre",[897.583],10)		
+	ClearAllActions()
+	StartCutSceneMode()
+	StartCutScene("KZCUTJ2")~
+EXIT	
+	
+CHAIN IF~Global("kzpingshou","GLOBAL",15)~THEN KZPSDLG FLPS8	
+	@22
+	END
+	IF ~~ THEN REPLY @36 EXTERN KZLZDLG FLPS9		 	
+	IF ~~ THEN REPLY @40 EXTERN KZLZDLG FLPS9	
+
+CHAIN KZLZDLG FLPS9
+	@83
+	== KZJJDLG @86
+	== KZSWDLG @102
+	== KZQBDLG @139
+	== KZQBDLG @140
+	END
+	IF ~~ THEN REPLY @141 EXTERN KZSQDLG FLPS10
+	IF ~~ THEN REPLY @142 EXTERN KZSQDLG FLPS10
+
+CHAIN KZSQDLG FLPS10
+	@143
+	== KZPSDLG @144
+	== KZSQDLG @145
+	== KZQBDLG @146
+	END
+	IF ~~ THEN 	
+	DO ~SetGlobal("kzpingshou","GLOBAL",16)
+	SetGlobal("kzjianjing","GLOBAL",16)
+	SetGlobal("kzlijia","GLOBAL",16)
+	SetGlobal("kzshouwu","GLOBAL",16)	
+	SetGlobal("kzlizuo","GLOBAL",16)		
+	SetGlobal("kzchangbin","GLOBAL",16)
+	SetGlobal("kzdeshan","GLOBAL",16)
+	SetGlobal("kzxiangcai","GLOBAL",16)
+	SetGlobal("kzdiaocha","GLOBAL",26)
+	SetGlobal("kzbeibu","GLOBAL",26)
+	SetGlobal("kzxiangcai","GLOBAL",16)		
+	StartCutSceneMode()
+	StartCutScene("KZCUTJ4")~
+EXIT	
+	
+CHAIN IF~Global("kzpingshou","GLOBAL",20)~THEN KZPSDLG FLPS11	
+	@428
+	== KZJJDLG @429
+	== KZSWDLG @430
+	== KZLZDLG @431
+	END
+	IF ~~ THEN REPLY @432 EXTERN KZLJDLG FLPS12	
+	IF ~~ THEN REPLY @433 EXTERN KZLJDLG FLPS12	
+	
+CHAIN KZLJDLG FLPS12
+	@434
+	== KZCBDLG @435
+	END
+	IF ~~ THEN REPLY @436 EXTERN KZPSDLG FLPS13
+	
+CHAIN KZPSDLG FLPS13	
+	@437
+	END
+	IF ~~ THEN REPLY @438 EXTERN KZPSDLG FLPS14	
+	
+CHAIN KZPSDLG FLPS14	
+	@439
+	== KZSWDLG @241
+	== KZLJDLG @188
+	== KZPSDLG @186
+	END
+	IF ~~ THEN REPLY @185 EXTERN KZPSDLG FLPS15		
+	
+CHAIN KZPSDLG FLPS15
+	@184
+	== KZLZDLG @183
+	== KZCBDLG @182
+	== KZSWDLG @181
+	== KZJJDLG @180
+	END
+	IF ~~ THEN 	
+	DO ~ClearAllActions()
+	StartCutSceneMode()
+	StartCutScene("KZCUTJ8")~
+EXIT
+	
+	

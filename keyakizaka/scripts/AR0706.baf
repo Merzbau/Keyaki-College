@@ -1,0 +1,21 @@
+IF
+NumDead("kzmtcre",1)
+Global("kzbeibu","GLOBAL",5)
+THEN
+RESPONSE #100
+SetGlobal("kzbeibu","GLOBAL",6)
+Continue()
+END
+
+
+IF
+NumDead("SHOP02",1)
+Global("kzbeibu","GLOBAL",4)
+THEN
+RESPONSE #100
+GiveItemCreate("kzhuosh",Player1,1,0,0)
+DisplayStringHead(Player1,@118) 
+SetGlobal("kzbeibu","GLOBAL",7)
+AddJournalEntry(@10026,QUEST)
+Continue()
+END

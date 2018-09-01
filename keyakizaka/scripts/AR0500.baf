@@ -1,0 +1,41 @@
+IF
+Exists(Player1)
+Global("kzpingshouExist","AR0500",0)
+Global("kzpingshou","GLOBAL",1)
+THEN
+RESPONSE #100
+SetGlobal("kzpingshouExist","AR0500",1)
+CreateCreature("kzpscre",[2438.2070],13)
+Continue()
+END
+
+
+IF
+Exists(Player1)
+Global("kzanuodeExist","AR0500",0)
+Global("kzdiaocha","GLOBAL",3)
+THEN
+RESPONSE #100
+SetGlobal("kzanuodeExist","AR0500",1)
+CreateCreature("kzyscre",[700.3700],6)
+Continue()
+END
+
+
+IF
+Global("kzdiaocha","GLOBAL",3)
+PartyHasItem("kzfanfu")
+THEN
+RESPONSE #100
+SetGlobal("kzshuangjiao","GLOBAL",3)
+SetGlobal("kzdiaocha","GLOBAL",4)
+SetGlobal("kzpingshou","GLOBAL",5)
+SetGlobal("kzjianjing","GLOBAL",5)
+SetGlobal("kzlizuo","GLOBAL",5)
+SetGlobal("kzlijia","GLOBAL",5)
+SetGlobal("kzshouwu","GLOBAL",5)
+SetGlobal("kzdeshan","GLOBAL",6)
+AddJournalEntry(@10020,QUEST)	
+Continue()
+END
+

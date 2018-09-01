@@ -1,0 +1,10 @@
+IF
+Exists(Player1)
+Global("kzlizuoExist","AR0319",0)
+Global("kzstudents","GLOBAL",1)
+THEN
+RESPONSE #100
+SetGlobal("kzlizuoExist","AR0319",1)
+CreateCreature("kzlzcre",[650.320],3)
+Continue()
+END

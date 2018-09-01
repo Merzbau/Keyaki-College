@@ -1,0 +1,97 @@
+IF
+Exists(Player1)
+Global("kzdeshanExist","KZCL01",0)
+THEN
+RESPONSE #100
+SetGlobal("kzdeshanExist","KZCL01",1)
+CreateCreature("kzdscre",[570.580],3)
+PlaySound("dsost1")
+Explore()
+END
+
+
+IF
+Global("kzstudents","GLOBAL",2)
+THEN
+RESPONSE #100
+ActionOverride("kzdscre",DestroySelf())
+SetGlobal("kzstudents","GLOBAL",3)
+END
+
+
+IF
+Exists(Player1)
+Global("kzstudents","GLOBAL",3)
+Global("kzEnteredKZCL01","KZCL01",0)
+THEN
+RESPONSE #100
+SetGlobal("kzEnteredKZCL01","KZCL01",1)
+DisplayStringHead(Player1,@136) 
+END
+
+
+IF
+Exists(Player1)
+Global("kzdeshan","GLOBAL",6)
+Global("kzdeshanExist","KZCL01",1)
+THEN
+RESPONSE #100
+CreateCreature("kzcpcre",[155.380],5)
+SetGlobal("kzdeshanExist","KZCL01",2)
+END
+
+
+IF
+Exists(Player1)
+Global("kzchangbin","GLOBAL",5)
+THEN
+RESPONSE #100
+CreateCreature("kzcbcre",[243.302],3)
+SetGlobal("kzchangbin","GLOBAL",6)
+END
+
+
+IF
+Exists(Player1)
+Global("kzchangbin","GLOBAL",8)
+THEN
+RESPONSE #100
+CreateCreature("kzpscre",[480.540],15)
+CreateCreature("kzswcre",[310.585],14)
+CreateCreature("kzjjcre",[375.535],14)
+CreateCreature("kzlzcre",[350.650],11)
+CreateCreature("kzljcre",[710.590],4)
+SetGlobal("kzchangbin","GLOBAL",9)
+END
+
+
+IF
+Exists(Player1)
+Global("kzshuangshou","GLOBAL",7)
+THEN
+RESPONSE #100
+CreateCreature("kzcbcre",[507.621],8)
+SetGlobal("kzshuangshou","GLOBAL",8)
+END
+
+
+IF
+NumDead("kzxbcre",1)
+Global("kzbeibu","GLOBAL",26)
+THEN
+RESPONSE #100
+AddJournalEntry(@10031,QUEST)
+SetGlobal("kzbeibu","GLOBAL",27)
+SetGlobal("kzxiangcai","GLOBAL",17)
+END
+
+
+IF
+Exists(Player1)
+Global("kzlijia","GLOBAL",25)
+THEN
+RESPONSE #100
+ActionOverride("kzcpcre",DestroySelf())
+SetGlobal("kzlijia","GLOBAL",26)
+END
+

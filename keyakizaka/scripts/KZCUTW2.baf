@@ -1,0 +1,15 @@
+IF
+True()
+THEN
+RESPONSE #100
+CutSceneId(Player1)
+MoveViewObject("kzwfcre",INSTANT)
+Wait(1)
+ActionOverride("kzwfcre",ForceSpell("kzwfcre",WIZARD_DIMENSION_DOOR))
+Wait(4)
+ActionOverride("kzwfcre",DestroySelf())
+Wait(3)
+EndCutSceneMode()
+END    
+
+	

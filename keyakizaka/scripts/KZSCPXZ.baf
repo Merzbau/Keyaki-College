@@ -1,0 +1,8 @@
+IF
+Global("kzbeibu","GLOBAL",8)
+See([PC])
+THEN
+RESPONSE #100
+SetGlobal("kzbeibu","GLOBAL",9)
+StartDialogueNoSet(Player1)
+END
